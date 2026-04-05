@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheKeyCard — L'OS marketing du commerce physique</title>
+<meta name="description" content="TheKeyCard remplace vos cartes tampons, vos SMS groupés et vos tableurs client par une seule app. Fidélité numérique, Flash Deals, pass mensuels, analytics temps réel. Gratuit jusqu'à 150 clients.">
+<link rel="canonical" href="https://thekeycard.app/">
+<meta property="og:title" content="TheKeyCard — L'OS marketing du commerce physique">
+<meta property="og:description" content="Scanner QR, Flash Deals, pass mensuels et analytics. La plateforme tout-en-un pour fidéliser vos clients locaux.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thekeycard.app/">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TheKeyCard — Fidélisation pour commerçants">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "TheKeyCard",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "iOS, Android",
+      "description": "Application de fidélité numérique tout-en-un pour commerçants. Remplace les cartes tampons papier par un système QR code avec dashboard analytics, Flash Deals, pass mensuels abonnements et anti-gaspi.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Plan Gratuit",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Scanner QR, dashboard KPI, Flash Deals et récompenses — jusqu'à 150 clients actifs"
+        },
+        {
+          "@type": "Offer",
+          "name": "Plan Premium",
+          "price": "59",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          },
+          "description": "Clients illimités, analytics avancés LTV churn cohortes, Flash Box anti-gaspi, parrainage traçable, priorité Découvrir"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "name": "TheKeyCard",
+      "url": "https://thekeycard.app",
+      "description": "Plateforme de fidélisation et marketing automation pour commerces physiques indépendants"
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── PAGE HERO ── */
+.hero-index {
+  padding-top: 120px;
+  padding-bottom: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-left {
+  padding: 80px 60px 80px 40px;
+}
+
+.hero-right {
+  background: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-right::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(184,146,42,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.hero-eyebrow-dot {
+  width: 7px; height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+
+.hero-h1 {
+  margin-bottom: 24px;
+}
+
+.hero-sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 44px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 52px;
+}
+
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-3);
+}
+
+.trust-check {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: rgba(48,209,88,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+/* ── APP MOCKUP (hero right) ── */
+.app-mockup {
+  width: 280px;
+  position: relative;
+  z-index: 1;
+}
+
+.phone-shell {
+  background: #111;
+  border-radius: 44px;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  padding: 18px 14px;
+  box-shadow: 0 60px 120px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+.phone-notch {
+  width: 88px; height: 24px;
+  background: #000;
+  border-radius: 0 0 16px 16px;
+  margin: 0 auto 14px;
+}
+
+.phone-screen {
+  background: var(--bg);
+  border-radius: 30px;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+.phone-header {
+  background: var(--surface);
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.phone-header-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-3);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.phone-header-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--text-1);
+}
+
+.phone-header-sub {
+  font-size: 10px;
+  font-weight: 300;
+  color: var(--text-3);
+}
+
+.phone-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.phone-kpi-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.phone-kpi {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+}
+
+.phone-kpi-lbl {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 3px;
+}
+
+.phone-kpi-val {
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  color: var(--text-1);
+  line-height: 1;
+}
+.phone-kpi-val.gold { color: var(--gold); }
+
+.phone-loyalty-card {
+  background: var(--gold-bg);
+  border: 1px solid var(--border-gold-s);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(184,146,42,0.15);
+}
+
+.plc-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.plc-logo {
+  width: 32px; height: 32px;
+  background: var(--ink);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.plc-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: 1px;
+}
+
+.plc-cat {
+  font-size: 9px;
+  font-weight: 300;
+  color: var(--text-2);
+}
+
+.plc-pts {
+  text-align: right;
+}
+.plc-pts-val {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  color: var(--gold);
+  line-height: 1;
+}
+.plc-pts-lbl { font-size: 9px; color: var(--text-3); }
+
+.plc-bar { margin: 8px 0 4px; }
+.plc-prog-track { height: 4px; background: rgba(184,146,42,0.12); border-radius: 100px; }
+.plc-prog-fill { height: 100%; width: 72%; background: var(--gold); border-radius: 100px; }
+
+.plc-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  font-weight: 300;
+  color: var(--text-3);
+}
+
+/* floating badges */
+.floating-badge {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  animation: float 4s ease infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.floating-badge.left {
+  left: -60px; top: 30%;
+  animation-delay: 0.5s;
+}
+
+.floating-badge.right {
+  right: -60px; top: 60%;
+  animation-delay: 1s;
+}
+
+.fb-label { font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.4); letter-spacing: 0.4px; text-transform: uppercase; margin-bottom: 3px; }
+.fb-value { font-size: 16px; font-weight: 300; letter-spacing: -0.8px; color: #fff; }
+.fb-value.green { color: var(--green); }
+
+/* ── STATS ROW ── */
+.stats-row {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 40px 0;
+}
+
+.stats-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 0 20px;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+
+.stat-val {
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: -2px;
+  line-height: 1;
+  color: var(--text-1);
+  margin-bottom: 6px;
+}
+.stat-val span { font-family: var(--font-serif); font-style: italic; color: var(--gold); }
+.stat-lbl { font-size: 12px; font-weight: 300; color: var(--text-2); }
+
+/* ── PROBLÈME ── */
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.problem-col-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.problem-col-label.bad { color: var(--red); }
+.problem-col-label.good { color: var(--green); }
+
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.check-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-2);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.6;
+}
+.check-list li:last-child { border-bottom: none; }
+
+.check-icon {
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin-top: 1px;
+}
+.check-icon.bad { background: rgba(255,59,48,0.10); color: var(--red); }
+.check-icon.good { background: rgba(48,209,88,0.10); color: var(--green); }
+
+/* ── FEATURES HUB ── */
+.features-hub {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.feature-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.feature-tab {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: background 0.2s;
+  border: 1px solid transparent;
+  background: transparent;
+  text-align: left;
+  width: 100%;
+}
+
+.feature-tab:hover { background: var(--surface); border-color: var(--border); }
+.feature-tab.active {
+  background: var(--surface);
+  border-color: var(--border-gold-s);
+}
+
+.ft-icon {
+  width: 40px; height: 40px;
+  border-radius: var(--r-sm);
+  background: var(--bg-warm);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.feature-tab.active .ft-icon {
+  background: var(--gold-bg);
+  border-color: var(--border-gold-s);
+}
+
+.ft-icon svg { width: 18px; height: 18px; stroke: var(--text-3); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.feature-tab.active .ft-icon svg { stroke: var(--gold); }
+
+.ft-text h3 { font-size: 14px; font-weight: 600; color: var(--text-1); margin-bottom: 2px; letter-spacing: -0.2px; }
+.ft-text p { font-size: 12px; font-weight: 300; color: var(--text-2); line-height: 1.5; }
+.ft-tag { margin-top: 4px; }
+
+.feature-preview {
+  position: sticky;
+  top: 100px;
+}
+
+.preview-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  display: none;
+}
+.preview-card.active { display: block; }
+
+.preview-header {
+  background: var(--ink);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.preview-title { font-size: 14px; font-weight: 600; color: #fff; }
+.preview-sub { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.4); }
+
+.preview-body { padding: 20px 24px; }
+
+/* ── TESTIMONIALS ── */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.testi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 24px;
+}
+
+.testi-stars {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.testi-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.testi-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; color: var(--gold);
+  flex-shrink: 0;
+}
+
+.testi-name { font-size: 13px; font-weight: 600; color: var(--text-1); }
+.testi-role { font-size: 11px; font-weight: 300; color: var(--text-3); }
+
+/* ── CTA SECTION ── */
+.cta-section {
+  background: var(--ink);
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px; height: 600px;
+  background: radial-gradient(ellipse, rgba(184,146,42,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cta-section .t-serif-display { color: #fff; }
+.cta-section .t-serif-display em { color: var(--gold-lt); }
+.cta-section .t-body { color: rgba(255,255,255,0.45); }
+
+@media (max-width: 900px) {
+  .hero-index { grid-template-columns: 1fr; }
+  .hero-right { min-height: 400px; padding: 48px 24px; }
+  .hero-left { padding: 48px 24px 32px; }
+  .problem-grid { grid-template-columns: 1fr; gap: 40px; }
+  .features-hub { grid-template-columns: 1fr; }
+  .feature-preview { position: static; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .stat-item:nth-child(2) { border-right: none; }
+  .floating-badge { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 14 14"><path d="M7 1L2 4.5v5L7 13l5-3.5v-5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="7" cy="7" r="1.5" fill="currentColor" style="fill:#B8922A"/></svg>
+    </div>
+    TheKeyCard
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+    <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+    <li><a href="tarifs.html">Tarifs</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="tarifs.html" class="nav-cta">Commencer gratuitement</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <line x1="3" y1="6" x2="19" y2="6"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="16" x2="19" y2="16"/>
+    </svg>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="hero-index">
+  <div class="hero-left">
+    <div class="hero-eyebrow reveal">
+      <span class="hero-eyebrow-dot"></span>
+      <span class="t-label color-text3">Lancement bientôt</span>
+      <span class="chip chip-gold">Beta gratuite</span>
+    </div>
+
+    <div class="hero-h1 reveal reveal-d1">
+      <p class="t-display" style="font-weight:300; letter-spacing:-2.5px; line-height:1.0;">
+        Vos clients<br>méritent mieux<br>
+      </p>
+      <p class="t-display t-serif-display" style="color:var(--gold); margin-top:4px;">
+        que du papier.
+      </p>
+    </div>
+
+    <p class="hero-sub reveal reveal-d2">
+      TheKeyCard transforme votre commerce en machine à fidéliser. Scanner QR, offres Flash, pass mensuels, analytics — une seule app, zéro friction.
+    </p>
+
+    <div class="hero-actions reveal reveal-d3">
+      <a href="tarifs.html" class="btn btn-ink btn-lg">Démarrer gratuitement</a>
+      <a href="comment-ca-marche.html" class="btn btn-ghost btn-lg">Voir comment ça marche →</a>
+    </div>
+
+    <div class="hero-trust reveal reveal-d4">
+      <div class="trust-item">
+        <span class="trust-check">✓</span>
+        Gratuit jusqu'à 150 clients
+      </div>
+      <span style="color:var(--border-md);">·</span>
+      <div class="trust-item">
+        <span class="trust-check">✓</span>
+        Aucune carte requise
+      </div>
+      <span style="color:var(--border-md);">·</span>
+      <div class="trust-item">
+        <span class="trust-check">✓</span>
+        iOS &amp; Android
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="app-mockup reveal">
+      <!-- Floating badges -->
+      <div class="floating-badge left">
+        <div class="fb-label">Clients actifs</div>
+        <div class="fb-value green">+24 <span style="font-size:11px;color:rgba(255,255,255,0.35);">ce mois</span></div>
+      </div>
+      <div class="floating-badge right">
+        <div class="fb-label">Rétention</div>
+        <div class="fb-value">68<span style="font-size:14px;color:rgba(255,255,255,0.4);">%</span></div>
+      </div>
+
+      <div class="phone-shell">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-header">
+            <div class="phone-header-label">Tableau de bord</div>
+            <div class="phone-header-title">Bonjour, Marie</div>
+            <div class="phone-header-sub">Lundi 14 avril · Café des Arts</div>
+          </div>
+          <div class="phone-body">
+            <div class="phone-kpi-row">
+              <div class="phone-kpi">
+                <div class="phone-kpi-lbl">Scans</div>
+                <div class="phone-kpi-val">24</div>
+              </div>
+              <div class="phone-kpi">
+                <div class="phone-kpi-lbl">MRR</div>
+                <div class="phone-kpi-val gold">580€</div>
+              </div>
+            </div>
+
+            <div class="phone-loyalty-card">
+              <div class="plc-top">
+                <div>
+                  <div class="plc-logo">CA</div>
+                </div>
+                <div style="flex:1;padding:0 10px;">
+                  <div class="plc-name">Café des Arts</div>
+                  <div class="plc-cat">Café · Paris 11e</div>
+                </div>
+                <div class="plc-pts">
+                  <div class="plc-pts-val">72</div>
+                  <div class="plc-pts-lbl">points</div>
+                </div>
+              </div>
+              <div class="plc-bar">
+                <div class="plc-prog-track">
+                  <div class="plc-prog-fill"></div>
+                </div>
+              </div>
+              <div class="plc-footer">
+                <span>28 pts avant récompense</span>
+                <span class="tier-badge tier-gold">Gold</span>
+              </div>
+            </div>
+
+            <div class="flash-pill">
+              <div class="flash-dot"></div>
+              ⚡ Flash actif — 3 menus à -25%
+            </div>
+
+            <!-- mini bar chart -->
+            <div style="background:var(--surface);border-radius:10px;padding:12px;border:1px solid var(--border);">
+              <div style="font-size:9px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">7 derniers jours</div>
+              <div style="display:flex;align-items:flex-end;gap:4px;height:40px;">
+                <div style="flex:1;background:var(--bg-warm);border-radius:3px 3px 0 0;height:45%;"></div>
+                <div style="flex:1;background:var(--bg-warm);border-radius:3px 3px 0 0;height:60%;"></div>
+                <div style="flex:1;background:var(--bg-warm);border-radius:3px 3px 0 0;height:40%;"></div>
+                <div style="flex:1;background:var(--bg-warm);border-radius:3px 3px 0 0;height:75%;"></div>
+                <div style="flex:1;background:var(--bg-warm);border-radius:3px 3px 0 0;height:55%;"></div>
+                <div style="flex:1;background:var(--bg-warm);border-radius:3px 3px 0 0;height:85%;"></div>
+                <div style="flex:1;background:var(--gold);border-radius:3px 3px 0 0;height:100%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item reveal">
+        <div class="stat-val">0<span>€</span></div>
+        <div class="stat-lbl">pour démarrer — toujours</div>
+      </div>
+      <div class="stat-item reveal reveal-d1">
+        <div class="stat-val">150</div>
+        <div class="stat-lbl">clients actifs inclus</div>
+      </div>
+      <div class="stat-item reveal reveal-d2">
+        <div class="stat-val">4<span>en 1</span></div>
+        <div class="stat-lbl">outils remplacés</div>
+      </div>
+      <div class="stat-item reveal reveal-d3">
+        <div class="stat-val">30<span>s</span></div>
+        <div class="stat-lbl">pour lancer un Flash Deal</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLÈME -->
+<section>
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="t-label">Le problème</span>
+      <h2 class="t-serif-display" style="margin-top:4px;">
+        Vous perdez des clients<br>sans le <em>savoir.</em>
+      </h2>
+      <p class="t-body color-text2" style="margin-top:16px; max-width:480px; font-size:16px;">
+        Un commerçant sur deux perd 30% de sa clientèle chaque année. Pas parce que ses produits sont mauvais — mais parce qu'il n'a aucun outil pour garder le contact.
+      </p>
+    </div>
+
+    <div class="problem-grid reveal reveal-d1">
+      <div>
+        <p class="problem-col-label bad">Avant TheKeyCard</p>
+        <ul class="check-list">
+          <li>
+            <span class="check-icon bad">✕</span>
+            Les cartes papier se perdent — un client sur trois ne la retrouve plus à la caisse.
+          </li>
+          <li>
+            <span class="check-icon bad">✕</span>
+            Vous ne savez pas qui n'est pas revenu depuis 3 semaines. Vous le découvrez trop tard.
+          </li>
+          <li>
+            <span class="check-icon bad">✕</span>
+            Vos heures creuses restent vides faute d'outil pour lancer une offre en quelques secondes.
+          </li>
+          <li>
+            <span class="check-icon bad">✕</span>
+            Vos invendus du soir finissent à la poubelle alors qu'ils se vendraient.
+          </li>
+          <li>
+            <span class="check-icon bad">✕</span>
+            Zéro donnée. Impossible de savoir qui sont vos meilleurs clients, ni comment les garder.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p class="problem-col-label good">Avec TheKeyCard</p>
+        <ul class="check-list">
+          <li>
+            <span class="check-icon good">✓</span>
+            Carte de fidélité numérique sur le téléphone du client — toujours disponible, jamais perdue.
+          </li>
+          <li>
+            <span class="check-icon good">✓</span>
+            Alerte automatique dès qu'un client est inactif depuis 21 jours, avant qu'il parte définitivement.
+          </li>
+          <li>
+            <span class="check-icon good">✓</span>
+            Flash Deal lancé en 30 secondes, visible immédiatement par tous vos clients dans l'app.
+          </li>
+          <li>
+            <span class="check-icon good">✓</span>
+            Flash Box anti-gaspi : vendez vos invendus sous forme de paniers surprises à prix réduit.
+          </li>
+          <li>
+            <span class="check-icon good">✓</span>
+            Dashboard temps réel : scans du jour, taux de rétention, MRR, clients actifs — tout en direct.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="t-label">Fonctionnalités</span>
+      <h2 class="t-serif-display" style="margin-top:4px;">
+        Un seul outil.<br><em>Tout le marketing.</em>
+      </h2>
+    </div>
+
+    <div class="features-hub">
+      <div class="feature-tabs" id="featureTabs">
+
+        <div class="feature-tab active" onclick="switchTab(0)">
+          <div class="ft-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <div class="ft-text">
+            <h3>Dashboard temps réel</h3>
+            <p>Scans du jour, MRR, rétention, clients actifs — tout se met à jour en direct.</p>
+            <span class="ft-tag chip chip-green">Inclus Gratuit</span>
+          </div>
+        </div>
+
+        <div class="feature-tab" onclick="switchTab(1)">
+          <div class="ft-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
+          </div>
+          <div class="ft-text">
+            <h3>Scanner QR intelligent</h3>
+            <p>Scan instantané, ajout de points automatique. Fallback OTP si besoin.</p>
+            <span class="ft-tag chip chip-green">Inclus Gratuit</span>
+          </div>
+        </div>
+
+        <div class="feature-tab" onclick="switchTab(2)">
+          <div class="ft-icon">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="ft-text">
+            <h3>Flash Deals</h3>
+            <p>Offre limitée créée en 30 secondes. Clients alertés immédiatement.</p>
+            <span class="ft-tag chip chip-green">Inclus Gratuit</span>
+          </div>
+        </div>
+
+        <div class="feature-tab" onclick="switchTab(3)">
+          <div class="ft-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="ft-text">
+            <h3>Pass mensuels</h3>
+            <p>Abonnements récurrents pour vos clients. MRR garanti chaque mois.</p>
+            <span class="ft-tag chip chip-gold">Premium</span>
+          </div>
+        </div>
+
+        <div class="feature-tab" onclick="switchTab(4)">
+          <div class="ft-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div class="ft-text">
+            <h3>Analytics avancés</h3>
+            <p>LTV, churn, cohortes. Identifiez vos meilleurs clients avant de les perdre.</p>
+            <span class="ft-tag chip chip-gold">Premium</span>
+          </div>
+        </div>
+
+        <div class="feature-tab" onclick="switchTab(5)">
+          <div class="ft-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <div class="ft-text">
+            <h3>Anti-gaspi Flash Box</h3>
+            <p>Invendus du soir vendus en paniers surprises. Retrait QR en boutique.</p>
+            <span class="ft-tag chip chip-gold">Premium</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="feature-preview" id="featurePreviews">
+
+        <div class="preview-card active" id="prev0">
+          <div class="preview-header">
+            <div>
+              <div class="preview-title">Tableau de bord</div>
+              <div class="preview-sub">Mis à jour en temps réel</div>
+            </div>
+            <span class="chip chip-gold" style="font-size:10px;">Gratuit</span>
+          </div>
+          <div class="preview-body">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+              <div class="kpi-widget">
+                <div class="kpi-label">Scans</div>
+                <div class="kpi-value" style="font-size:28px;">24</div>
+                <div class="kpi-change">↑ +6 vs hier</div>
+              </div>
+              <div class="kpi-widget">
+                <div class="kpi-label">MRR</div>
+                <div class="kpi-value gold" style="font-size:28px;">580€</div>
+                <div class="kpi-change">↑ +12%</div>
+              </div>
+            </div>
+            <div style="font-size:10px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Visites — 7 jours</div>
+            <div style="display:flex;align-items:flex-end;gap:5px;height:60px;">
+              <div style="flex:1;background:var(--bg-warm);border-radius:4px 4px 0 0;height:45%;"></div>
+              <div style="flex:1;background:var(--bg-warm);border-radius:4px 4px 0 0;height:60%;"></div>
+              <div style="flex:1;background:var(--bg-warm);border-radius:4px 4px 0 0;height:35%;"></div>
+              <div style="flex:1;background:var(--bg-warm);border-radius:4px 4px 0 0;height:70%;"></div>
+              <div style="flex:1;background:var(--bg-warm);border-radius:4px 4px 0 0;height:50%;"></div>
+              <div style="flex:1;background:var(--bg-warm);border-radius:4px 4px 0 0;height:80%;"></div>
+              <div style="flex:1;background:var(--gold);border-radius:4px 4px 0 0;height:100%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="preview-card" id="prev1">
+          <div class="preview-header">
+            <div><div class="preview-title">Scanner un client</div><div class="preview-sub">QR code + OTP fallback</div></div>
+          </div>
+          <div class="preview-body">
+            <div style="background:var(--ink);border-radius:12px;padding:20px;text-align:center;margin-bottom:12px;">
+              <div style="width:80px;height:80px;margin:0 auto;border:2px solid var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(184,146,42,0.6)" stroke-width="1" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="0.5"/><rect x="14" y="3" width="7" height="7" rx="0.5"/><rect x="3" y="14" width="7" height="7" rx="0.5"/><rect x="14" y="14" width="3" height="3"/><rect x="19" y="14" width="2" height="2"/><rect x="14" y="19" width="2" height="2"/><rect x="18" y="18" width="3" height="3"/></svg>
+              </div>
+              <div style="font-size:11px;font-weight:300;color:rgba(255,255,255,0.4);margin-top:10px;">Scannez le code du client</div>
+            </div>
+            <div style="background:var(--gold-bg);border:1px solid var(--border-gold-s);border-radius:12px;padding:14px;display:flex;align-items:center;justify-content:space-between;">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-1);">Sophie M.</div>
+                <div style="font-size:11px;font-weight:300;color:var(--text-2);">Gold · 72 pts</div>
+              </div>
+              <div style="font-size:18px;font-weight:300;color:var(--gold);">+10 pts</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="preview-card" id="prev2">
+          <div class="preview-header"><div><div class="preview-title">Flash Deals</div><div class="preview-sub">Offres limitées en temps réel</div></div></div>
+          <div class="preview-body">
+            <div style="background:var(--bg);border-radius:12px;padding:16px;margin-bottom:10px;border:1px solid var(--border);">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
+                <div>
+                  <div style="font-size:13px;font-weight:600;color:var(--text-1);">Menu déjeuner</div>
+                  <div style="font-size:11px;color:var(--text-2);">3 restants · expire 14h00</div>
+                </div>
+                <div style="font-size:20px;font-weight:300;color:var(--bronze);">-25%</div>
+              </div>
+              <div style="background:#FFF0E5;border-radius:6px;padding:6px 10px;font-size:10px;font-weight:600;color:var(--bronze);">⚡ FLASH ACTIF</div>
+            </div>
+            <div class="btn btn-gold" style="width:100%;justify-content:center;font-size:13px;">+ Créer une offre</div>
+          </div>
+        </div>
+
+        <div class="preview-card" id="prev3">
+          <div class="preview-header"><div><div class="preview-title">Pass mensuels</div><div class="preview-sub">Revenus récurrents garantis</div></div></div>
+          <div class="preview-body">
+            <div style="background:var(--gold-bg);border:1px solid var(--border-gold-s);border-radius:12px;padding:16px;margin-bottom:10px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <div style="font-size:13px;font-weight:600;color:var(--text-1);">Pass Café Illimité</div>
+                <div style="font-size:16px;font-weight:300;color:var(--gold);">30€/mois</div>
+              </div>
+              <div style="font-size:11px;color:var(--text-2);margin-bottom:10px;">4 cafés par mois · renouvellement auto</div>
+              <div style="display:flex;justify-content:space-between;font-size:10px;">
+                <span style="color:var(--text-3);">12 abonnés actifs</span>
+                <span style="color:var(--gold);font-weight:600;">MRR : 360€</span>
+              </div>
+            </div>
+            <div style="font-size:10px;font-weight:300;color:var(--text-3);">Commission TKC : 15% prélevé sur l'encaissé</div>
+          </div>
+        </div>
+
+        <div class="preview-card" id="prev4">
+          <div class="preview-header"><div><div class="preview-title">Analytics avancés</div><div class="preview-sub">Premium uniquement</div></div></div>
+          <div class="preview-body">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <div class="kpi-widget">
+                <div class="kpi-label">LTV moyen</div>
+                <div class="kpi-value gold" style="font-size:24px;">142€</div>
+              </div>
+              <div class="kpi-widget">
+                <div class="kpi-label">Churn</div>
+                <div class="kpi-value" style="font-size:24px;color:var(--orange);">8%</div>
+              </div>
+              <div class="kpi-widget" style="grid-column:span 2;">
+                <div class="kpi-label">Clients à risque (21j+)</div>
+                <div style="display:flex;align-items:center;gap:12px;margin-top:8px;">
+                  <div class="kpi-value" style="font-size:24px;color:var(--red);">7</div>
+                  <div class="btn btn-sm btn-gold">Envoyer offre</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="preview-card" id="prev5">
+          <div class="preview-header"><div><div class="preview-title">Flash Box</div><div class="preview-sub">Anti-gaspi · Premium</div></div></div>
+          <div class="preview-body">
+            <div style="background:var(--bg);border-radius:12px;padding:16px;border:1px solid var(--border);margin-bottom:10px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <div>
+                  <div style="font-size:13px;font-weight:600;">Panier Boulangerie</div>
+                  <div style="font-size:11px;color:var(--text-2);">5 restants · expire 19h30</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:18px;font-weight:300;color:var(--bronze);">3,90€</div>
+                  <div style="font-size:10px;color:var(--text-3);text-decoration:line-through;">12€</div>
+                </div>
+              </div>
+              <div style="font-size:10px;color:var(--green);font-weight:600;">3 réservations ce soir</div>
+            </div>
+            <div style="font-size:11px;font-weight:300;color:var(--text-3);">Commission TKC : 10% — aucun frais si invendu</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <span class="t-label">Témoignages</span>
+      <h2 class="t-serif-display" style="margin-top:4px;">Ce qu'ils disent de <em>TheKeyCard</em></h2>
+    </div>
+    <div class="testi-grid reveal reveal-d1">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"En trois semaines, mes habitués sont revenus plus souvent. Le Flash Deal du mardi m'a permis d'écouler toutes mes viennoiseries restantes à 17h. Plus aucun gaspillage."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ML</div>
+          <div>
+            <div class="testi-name">Marie L.</div>
+            <div class="testi-role">Boulangerie artisanale · Lyon</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Le pass mensuel café illimité a changé mon rapport aux revenus. Je sais exactement combien je vais encaisser le mois prochain. C'est comme avoir un abonnement garanti."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SF</div>
+          <div>
+            <div class="testi-name">Sofiane F.</div>
+            <div class="testi-role">Café indépendant · Bordeaux</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"L'alerte anti-churn m'a permis de relancer 14 clients inactifs. 9 sont revenus. Avec les tampons papier, ces clients étaient définitivement perdus sans que je le sache."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AR</div>
+          <div>
+            <div class="testi-name">Amira R.</div>
+            <div class="testi-role">Salon de coiffure · Paris 11e</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="container-sm" style="position:relative;z-index:1;">
+    <div class="reveal">
+      <span class="t-label" style="color:rgba(255,255,255,0.3);display:block;margin-bottom:16px;">Rejoindre TheKeyCard</span>
+      <h2 class="t-serif-display" style="color:#fff;margin-bottom:24px;">
+        Commencez<br><em style="color:var(--gold-lt);">dès aujourd'hui.</em><br>
+        <span style="font-size:0.7em;font-weight:300;">C'est gratuit.</span>
+      </h2>
+      <p class="t-body" style="color:rgba(255,255,255,0.4);margin-bottom:44px;max-width:400px;margin-left:auto;margin-right:auto;">
+        Rejoignez la liste d'attente et soyez parmi les premiers commerçants à utiliser TheKeyCard lors du lancement.
+      </p>
+      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+        <a href="tarifs.html" class="btn btn-gold btn-lg">Rejoindre la bêta</a>
+        <a href="fonctionnalites.html" class="btn btn-lg" style="color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">Voir toutes les fonctionnalités</a>
+      </div>
+      <p style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.25);margin-top:24px;">iOS & Android · Gratuit jusqu'à 150 clients · Aucune carte requise</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">TheKeyCard</a>
+        <p style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.3);margin-top:12px;max-width:220px;line-height:1.7;">
+          L'OS marketing du commerce physique. Fidélisez, automatisez, grandissez.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Produit</h4>
+        <ul>
+          <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+          <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Guide commerçant</a></li>
+          <li><a href="#">Témoignages</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="#">Confidentialité</a></li>
+          <li><a href="#">CGU</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 TheKeyCard · Tous droits réservés</span>
+      <span style="font-size:12px;color:rgba(255,255,255,0.2);">Made in France 🇫🇷</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function switchTab(idx) {
+  document.querySelectorAll('.feature-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  document.querySelectorAll('.preview-card').forEach((p,i) => p.classList.toggle('active', i===idx));
+}
+
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
