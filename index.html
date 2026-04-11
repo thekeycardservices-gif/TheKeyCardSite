@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO Core ────────────────────────────────────────── -->
+  <title>CoLinker — Application de fidélité locale pour commerçants | Carte digitale gratuite</title>
+  <meta name="description" content="CoLinker remplace les cartes papier par une super-app de fidélité digitale. Scanner QR, points automatiques, dashboard temps réel. Gratuit jusqu'à 150 clients." />
+  <meta name="keywords" content="application fidélité commerçants, carte fidélité numérique, programme fidélité restaurant café, fidélisation client indépendant, scanner QR fidélité, CoLinker" />
+  <meta name="author" content="CoLinker" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="language" content="fr" />
+  <link rel="canonical" href="https://www.colinker.fr/" />
+
+  <!-- ── Open Graph ──────────────────────────────────────── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="CoLinker — Fidélité locale réinventée" />
+  <meta property="og:description" content="Super-app de fidélité qui connecte commerçants de quartier et clients. Scanner, points automatiques, offres flash. Gratuit pour démarrer." />
+  <meta property="og:url"         content="https://www.colinker.fr/" />
+  <meta property="og:site_name"   content="CoLinker" />
+  <meta property="og:locale"      content="fr_FR" />
+
+  <!-- ── Twitter Cards ───────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="CoLinker — Fidélité locale réinventée" />
+  <meta name="twitter:description" content="Remplacez vos cartes papier par une expérience de fidélité digitale. Gratuit pour les commerçants indépendants." />
+
+  <!-- ── Structured Data — Organization + SoftwareApplication ── -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CoLinker",
+      "url": "https://www.colinker.fr",
+      "description": "Super-app de fidélité locale connectant commerçants indépendants et clients de quartier",
+      "foundingLocation": { "@type": "Place", "addressCountry": "FR" },
+      "sameAs": ["https://www.instagram.com/colinker", "https://www.tiktok.com/@colinker", "https://www.linkedin.com/company/colinker"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CoLinker",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "iOS, Android",
+      "offers": [
+        { "@type": "Offer", "name": "Gratuit", "price": "0", "priceCurrency": "EUR" },
+        { "@type": "Offer", "name": "Premium", "price": "59", "priceCurrency": "EUR", "billingIncrement": "month" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "3214",
+        "bestRating": "5"
+      },
+      "description": "CoLinker remplace les cartes de fidélité papier par une application mobile gamifiée connectant les commerçants indépendants (boulangeries, cafés, épiceries) à leurs clients réguliers.",
+      "featureList": "Scanner QR, Programme de points, Dashboard analytics, Offres flash, Tier system, Anti-churn automatique",
+      "screenshot": "https://www.colinker.fr/og-image.jpg"
+    }
+  ]
+  </script>
+
+  <!-- ── Fonts ───────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+
+  <!-- ── Shared CSS ──────────────────────────────────────── -->
+  <link rel="stylesheet" href="assets/style.css" />
+
+  <style>
+    /* ── HERO ──────────────────────────────────────────────── */
+    #hero {
+      padding: 148px 0 88px;
+      background: var(--bg-main);
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(46px, 5.5vw, 72px);
+      line-height: 1.09;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .hero-enfin {
+      font-family: 'Figtree', sans-serif;
+      font-weight: 300;
+      font-size: clamp(36px, 4.5vw, 58px);
+      color: var(--text-secondary);
+      line-height: 1.1;
+      margin-bottom: 26px;
+    }
+    .hero-desc {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+
+    /* Stats bar */
+    .stats-bar {
+      display: flex;
+      gap: 28px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .stat-item {}
+    .stat-num {
+      font-weight: 600;
+      font-size: 21px;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-lbl {
+      font-size: 11.5px;
+      font-weight: 300;
+      color: var(--text-secondary);
+    }
+    .stat-sep { width: 1px; background: var(--border); align-self: stretch; }
+
+    /* ── Phone mockup ───────────────────────────────────────── */
+    .hero-visual { display: flex; justify-content: center; }
+
+    /* Phone inner content */
+    .app-header {
+      padding: 6px 16px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .app-greeting { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+    .app-date { font-size: 10px; font-weight: 300; color: var(--text-secondary); margin-top: 1px; }
+    .app-notif {
+      width: 30px; height: 30px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .notif-badge {
+      position: absolute;
+      top: -3px; right: -3px;
+      width: 13px; height: 13px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font-size: 7px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      border: 1.5px solid var(--bg-main);
+    }
+    .phone-section-title {
+      font-size: 11px; font-weight: 600;
+      color: var(--text-primary);
+      padding: 0 16px;
+      margin-bottom: 8px;
+    }
+    .phone-section-title span {
+      font-weight: 300;
+      color: var(--text-secondary);
+      margin-left: 4px;
+    }
+    .card-area { padding: 0 12px; margin-bottom: 12px; }
+
+    /* Search bar */
+    .app-search {
+      margin: 0 12px 12px;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 11px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .app-search-label { font-size: 11px; font-weight: 300; color: var(--text-tertiary); }
+
+    /* Offer mini cards */
+    .phone-offers { padding: 0 12px; display: flex; gap: 8px; }
+    .offer-mini-card {
+      flex: 1;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 10px 8px;
+      overflow: hidden;
+    }
+    .omc-tag {
+      font-size: 8px; font-weight: 600;
+      color: var(--gold);
+      background: var(--gold-bg);
+      padding: 2px 7px;
+      border-radius: 100px;
+      width: fit-content;
+      margin-bottom: 6px;
+    }
+    .omc-name { font-size: 10px; font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
+    .omc-val { font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; }
+    .omc-timer { font-size: 8px; font-weight: 300; color: var(--text-secondary); }
+
+    /* ── PROBLEM / SOLUTION ─────────────────────────────────── */
+    #problem { background: var(--bg-main); padding-top: 0; }
+    .ps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .ps-card { border-radius: var(--r-xl); padding: 40px 36px; }
+    .ps-before {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+    .ps-after {
+      background: var(--gold-bg);
+      border: 0.5px solid var(--border-gold);
+    }
+    .ps-badge {
+      display: inline-block;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .ps-badge-before { background: rgba(255,59,48,.08); color: var(--red); }
+    .ps-badge-after  { background: rgba(184,146,42,.12); color: var(--gold); }
+    .ps-title { font-weight: 600; font-size: 20px; margin-bottom: 24px; line-height: 1.3; }
+    .ps-list { display: flex; flex-direction: column; gap: 16px; }
+    .ps-item { display: flex; gap: 12px; align-items: flex-start; }
+    .ps-dot {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .ps-dot-bad  { background: rgba(255,59,48,.1); }
+    .ps-dot-good { background: rgba(184,146,42,.12); }
+    .ps-item-label { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+    .ps-item-desc  { font-size: 13px; font-weight: 300; color: var(--text-secondary); }
+
+    /* ── FEATURES PREVIEW ──────────────────────────────────── */
+    #features-preview { background: var(--bg-warm); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .fc {
+      background: var(--surface);
+      border: 0.5px solid var(--border-gold);
+      border-radius: var(--r-xl);
+      padding: 28px 24px;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      box-shadow: var(--shadow-soft);
+    }
+    .fc:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); border-color: rgba(184,146,42,.35); }
+    .fc-icon {
+      width: 44px; height: 44px;
+      border-radius: 13px;
+      background: var(--gold-bg);
+      border: 0.5px solid var(--border-gold);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .fc-title { font-weight: 600; font-size: 15px; margin-bottom: 8px; }
+    .fc-desc  { font-size: 13px; font-weight: 300; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── TESTIMONIALS ───────────────────────────────────────── */
+    #testimonials { background: var(--bg-main); }
+    .tc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .tc {
+      background: var(--surface);
+      border: 0.5px solid var(--border-gold);
+      border-radius: var(--r-xl);
+      padding: 28px 24px;
+      display: flex; flex-direction: column; gap: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+    .tc-stars { display: flex; gap: 2px; }
+    .tc-stars span { font-size: 13px; color: var(--gold); }
+    .tc-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 15px; line-height: 1.65;
+      color: var(--text-primary); flex: 1;
+    }
+    .tc-author { display: flex; align-items: center; gap: 11px; }
+    .tc-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--gold-bg);
+      border: 0.5px solid var(--border-gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 600; color: var(--gold);
+      flex-shrink: 0;
+    }
+    .tc-name  { font-weight: 600; font-size: 13px; }
+    .tc-role  { font-size: 11px; font-weight: 300; color: var(--text-secondary); }
+
+    /* ── PRICING TEASER ─────────────────────────────────────── */
+    #pricing-teaser { background: var(--bg-warm); }
+    .pt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .pt-card {
+      border-radius: var(--r-xl);
+      padding: 36px 32px;
+      display: flex; flex-direction: column;
+    }
+    .pt-free    { background: var(--surface); border: 0.5px solid var(--border); box-shadow: var(--shadow-soft); }
+    .pt-premium { background: var(--gold-pale); border: 1.5px solid var(--border-gold-strong); box-shadow: var(--shadow-gold); }
+    .pt-badge   { display: inline-block; font-size: 11px; font-weight: 600; background: var(--gold); color: #fff; padding: 3px 12px; border-radius: 100px; margin-bottom: 16px; width: fit-content; }
+    .pt-plan    { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--text-secondary); margin-bottom: 10px; }
+    .pt-price   { display: flex; align-items: flex-end; gap: 2px; margin-bottom: 18px; }
+    .pt-cur     { font-size: 18px; font-weight: 600; padding-bottom: 5px; }
+    .pt-amt     { font-size: 44px; font-weight: 600; line-height: 1; }
+    .pt-per     { font-size: 13px; font-weight: 300; color: var(--text-secondary); padding-bottom: 7px; }
+    .pt-features{ display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; flex: 1; }
+    .pt-f       { display: flex; gap: 9px; align-items: flex-start; font-size: 13px; font-weight: 300; }
+    .pt-check   { width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .check-std  { background: rgba(26,26,26,.07); }
+    .check-prem { background: rgba(184,146,42,.15); }
+
+    /* ── CTA FINAL ──────────────────────────────────────────── */
+    #cta-final {
+      background: var(--dark-bar);
+      padding: 112px 0;
+      text-align: center;
+    }
+    .cf-label  { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 24px; display: block; }
+    .cf-title  { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(34px, 5vw, 60px); color: #fff; line-height: 1.15; margin-bottom: 18px; }
+    .cf-sub    { font-size: 17px; font-weight: 300; color: rgba(255,255,255,.55); margin: 0 auto 44px; max-width: 500px; }
+    .cf-btns   { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .cf-stores {
+      display: flex; align-items: center; justify-content: center; gap: 28px;
+      margin-top: 48px; padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .cs-item   { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,.38); font-size: 12px; font-weight: 300; }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      #hero { padding: 120px 0 72px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-desc { max-width: 100%; }
+      .hero-ctas { justify-content: center; }
+      .stats-bar { justify-content: center; }
+      .hero-visual { order: -1; }
+      .ps-grid { grid-template-columns: 1fr; }
+      .tc-grid { grid-template-columns: 1fr; }
+      .pt-grid { grid-template-columns: 1fr; max-width: 420px; }
+    }
+    @media (max-width: 480px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .ps-card { padding: 28px 22px; }
+      .pt-card { padding: 28px 22px; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; }
+      .cf-btns { flex-direction: column; align-items: center; }
+      .cf-btns .btn { width: 100%; max-width: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+============================================================ -->
+<nav id="nav" role="navigation" aria-label="Navigation principale">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="CoLinker — Accueil">
+        <span class="co">Co</span><span class="linker">Linker</span>
+      </a>
+      <div class="nav-links">
+        <a href="fonctionnalites.html">Fonctionnalités</a>
+        <a href="tarifs.html">Tarifs</a>
+        <a href="commercants.html">Commerçants</a>
+        <a href="telecharger.html">Télécharger</a>
+      </div>
+      <div class="nav-right">
+        <a href="telecharger.html" class="btn btn-dark">Télécharger gratuitement</a>
+        <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation mobile">
+  <a href="fonctionnalites.html" onclick="closeMobile()">Fonctionnalités</a>
+  <a href="tarifs.html" onclick="closeMobile()">Tarifs</a>
+  <a href="commercants.html" onclick="closeMobile()">Commerçants</a>
+  <a href="telecharger.html" onclick="closeMobile()">Télécharger</a>
+  <a href="telecharger.html" class="btn btn-dark" onclick="closeMobile()">Télécharger gratuitement</a>
+</div>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<main>
+<section id="hero" aria-label="Introduction">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Copy -->
+      <div>
+        <div class="tag-pill fade-up">
+          <span class="dot"></span>
+          Nouveau — Fidélité locale réinventée
+        </div>
+        <h1 class="hero-h1 fade-up d1">Chaque visite compte.</h1>
+        <p class="hero-enfin fade-up d2">Enfin.</p>
+        <p class="hero-desc fade-up d2">
+          CoLinker connecte les commerçants de quartier à leurs meilleurs clients.
+          Scanner, fidéliser, récompenser — sans carte papier, sans friction.
+        </p>
+        <div class="hero-ctas fade-up d3">
+          <a href="telecharger.html" class="btn btn-dark">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2v8M5 7.5l2.5 2.5 2.5-2.5M2.5 12.5h10" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Télécharger — c'est gratuit
+          </a>
+          <a href="commercants.html" class="btn btn-gold-outline">Je suis commerçant →</a>
+        </div>
+        <div class="stats-bar fade-up d4">
+          <div class="stat-item">
+            <div class="stat-num"><span data-count="2000" data-suffix="+">2 000+</span></div>
+            <div class="stat-lbl">Commerçants actifs</div>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-item">
+            <div class="stat-num"><span data-count="150000">150 000</span></div>
+            <div class="stat-lbl">Clients réguliers</div>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-item">
+            <div class="stat-num"><span data-count="4.9" data-suffix="★">4,9★</span></div>
+            <div class="stat-lbl">Note App Store</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone mockup — Client app home screen -->
+      <div class="hero-visual fade-up d3">
+        <div class="float">
+          <div class="phone-device" role="img" aria-label="Aperçu de l'application CoLinker">
+            <div class="phone-screen">
+              <div class="dynamic-island"></div>
+
+              <!-- Status bar -->
+              <div class="status-bar">
+                <span class="status-time">9:41</span>
+                <div class="status-icons">
+                  <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><rect x="0" y="6.5" width="2" height="3.5" rx=".5" fill="#1A1A1A"/><rect x="3" y="4.5" width="2" height="5.5" rx=".5" fill="#1A1A1A"/><rect x="6" y="2.5" width="2" height="7.5" rx=".5" fill="#1A1A1A"/><rect x="9" y="0" width="2" height="10" rx=".5" fill="#1A1A1A"/><rect x="12" y="0" width="2" height="10" rx=".5" fill="#1A1A1A" opacity=".25"/></svg>
+                  <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M7 2.5C4.8 2.5 2.8 3.5 1.5 5L0 3.5C1.7 1.9 4.2 1 7 1s5.3.9 7 2.5L12.5 5C11.2 3.5 9.2 2.5 7 2.5z" fill="#1A1A1A"/><path d="M7 5.5c-1.2 0-2.2.5-3 1.2L3 5.8C4.2 4.9 5.5 4.5 7 4.5s2.8.4 4 1.3L10 7.2C9.2 6 8.2 5.5 7 5.5z" fill="#1A1A1A"/><circle cx="7" cy="9" r="1" fill="#1A1A1A"/></svg>
+                  <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><rect x=".5" y=".5" width="17" height="9" rx="2.5" stroke="#1A1A1A" stroke-opacity=".35"/><rect x="2" y="2" width="12.5" height="6" rx="1.5" fill="#1A1A1A"/><path d="M18.5 3v4c.8-.4 1.2-1 1.2-2s-.4-1.6-1.2-2z" fill="#1A1A1A" opacity=".4"/></svg>
+                </div>
+              </div>
+
+              <!-- App header -->
+              <div class="app-header">
+                <div>
+                  <div class="app-greeting">Bonjour, Julie</div>
+                  <div class="app-date">Jeudi 10 avril · Paris 11e</div>
+                </div>
+                <div class="app-notif">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5A4 4 0 003 5.5v1.6L2 9h10l-1-1.9V5.5A4 4 0 007 1.5z" stroke="#1A1A1A" stroke-width="1.2" stroke-linecap="round"/><path d="M5.5 9v.5a1.5 1.5 0 003 0V9" stroke="#1A1A1A" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  <div class="notif-badge">3</div>
+                </div>
+              </div>
+
+              <!-- Search -->
+              <div class="app-search">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#1A1A1A" stroke-opacity=".3" stroke-width="1.2"/><path d="M8 8l2 2" stroke="#1A1A1A" stroke-opacity=".3" stroke-width="1.2" stroke-linecap="round"/></svg>
+                <span class="app-search-label">Rechercher un commerce...</span>
+              </div>
+
+              <!-- Cards section -->
+              <div class="phone-section-title">Vos cartes <span>3</span></div>
+              <div class="card-area">
+                <div class="loyalty-card">
+                  <div class="lc-row">
+                    <span class="lc-brand">Café Lumière</span>
+                    <span class="lc-tier">Gold</span>
+                  </div>
+                  <div class="lc-pts-num">840</div>
+                  <div class="lc-pts-sub">points · prochaine récompense à 1 000</div>
+                  <div class="lc-progress"><div class="lc-progress-bar" style="width:84%"></div></div>
+                  <div class="lc-progress-row">
+                    <span class="lc-progress-label">0</span>
+                    <span class="lc-progress-label">1 000 pts = café offert</span>
+                  </div>
+                  <div class="lc-stamps">
+                    <div class="lc-stamp on"></div><div class="lc-stamp on"></div>
+                    <div class="lc-stamp on"></div><div class="lc-stamp on"></div>
+                    <div class="lc-stamp on"></div><div class="lc-stamp on"></div>
+                    <div class="lc-stamp"></div><div class="lc-stamp"></div>
+                    <div class="lc-stamp"></div><div class="lc-stamp"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Flash offers -->
+              <div class="phone-section-title">Offres flash <span>4</span></div>
+              <div class="phone-offers">
+                <div class="offer-mini-card">
+                  <div class="omc-tag">Flash</div>
+                  <div class="omc-name">Boulangerie Paul</div>
+                  <div class="omc-val">−20%</div>
+                  <div class="omc-timer">Expire dans 2h 14min</div>
+                </div>
+                <div class="offer-mini-card">
+                  <div class="omc-tag">1+1</div>
+                  <div class="omc-name">Café Lumière</div>
+                  <div class="omc-val">1 acheté offert</div>
+                  <div class="omc-timer">Expire dans 30min</div>
+                </div>
+              </div>
+
+              <!-- Tab bar -->
+              <div style="flex:1"></div>
+              <div class="tab-bar">
+                <div class="tab-item active">
+                  <div class="tab-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2.5" stroke="#B8922A" stroke-width="1.4"/><path d="M2 9h16" stroke="#B8922A" stroke-width="1.4"/><circle cx="15" cy="13" r="1.2" fill="#B8922A"/></svg>
+                  </div>
+                  <span class="tab-label">Wallet</span>
+                </div>
+                <div class="tab-item">
+                  <div class="tab-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="4" y="4" width="12" height="12" rx="2" stroke="#1A1A1A" stroke-opacity=".3" stroke-width="1.3"/><path d="M8 4V3M12 4V3M4 8H3M4 12H3M16 8h1M16 12h1M8 16v1M12 16v1" stroke="#1A1A1A" stroke-opacity=".3" stroke-width="1.2" stroke-linecap="round"/><rect x="7.5" y="7.5" width="5" height="5" rx="1" stroke="#1A1A1A" stroke-opacity=".3" stroke-width="1.2"/></svg>
+                  </div>
+                  <span class="tab-label">Scanner</span>
+                </div>
+                <div class="tab-item">
+                  <div class="tab-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C7.2 2 5 4.2 5 7c0 4.5 5 11 5 11s5-6.5 5-11c0-2.8-2.2-5-5-5z" stroke="#1A1A1A" stroke-opacity=".3" stroke-width="1.3"/><circle cx="10" cy="7" r="2" stroke="#1A1A1A" stroke-opacity=".3" stroke-width="1.2"/></svg>
+                  </div>
+                  <span class="tab-label">Explore</span>
+                </div>
+                <div class="tab-item">
+                  <div class="tab-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="#1A1A1A" stroke-opacity=".3" stroke-width="1.3"/><path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A1A1A" stroke-opacity=".3" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  </div>
+                  <span class="tab-label">Profil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROBLÈME / SOLUTION
+============================================================ -->
+<section id="problem" aria-label="Avant et après CoLinker">
+  <div class="container">
+    <div class="ps-grid">
+      <div class="ps-card ps-before fade-up d1">
+        <div class="ps-badge ps-badge-before">Avant CoLinker</div>
+        <div class="ps-title">La fidélité papier, une opportunité gâchée</div>
+        <ul class="ps-list">
+          <li class="ps-item">
+            <div class="ps-dot ps-dot-bad">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#FF3B30" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ps-item-label">1 carte sur 3 perdue ou oubliée</div>
+              <div class="ps-item-desc">Votre investissement part à la poubelle avant même d'être rentabilisé.</div>
+            </div>
+          </li>
+          <li class="ps-item">
+            <div class="ps-dot ps-dot-bad">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#FF3B30" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ps-item-label">Zéro donnée sur vos clients</div>
+              <div class="ps-item-desc">Impossible de savoir qui revient, qui vous quitte, ni pourquoi.</div>
+            </div>
+          </li>
+          <li class="ps-item">
+            <div class="ps-dot ps-dot-bad">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#FF3B30" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ps-item-label">Flyers ignorés à 42%</div>
+              <div class="ps-item-desc">Vos promotions n'atteignent jamais les bonnes personnes au bon moment.</div>
+            </div>
+          </li>
+          <li class="ps-item">
+            <div class="ps-dot ps-dot-bad">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#FF3B30" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ps-item-label">Aucune alerte de départ client</div>
+              <div class="ps-item-desc">Vous apprenez qu'un habitué est parti quand il est déjà chez le concurrent.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="ps-card ps-after fade-up d2">
+        <div class="ps-badge ps-badge-after">Avec CoLinker</div>
+        <div class="ps-title">La fidélité qui travaille pour vous</div>
+        <ul class="ps-list">
+          <li class="ps-item">
+            <div class="ps-dot ps-dot-good">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#B8922A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="ps-item-label">Carte numérique toujours disponible</div>
+              <div class="ps-item-desc">Dans le téléphone, impossible à perdre. Accessible en 2 secondes.</div>
+            </div>
+          </li>
+          <li class="ps-item">
+            <div class="ps-dot ps-dot-good">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#B8922A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="ps-item-label">Dashboard temps réel</div>
+              <div class="ps-item-desc">Scans du jour, rétention mensuelle, LTV — tout visible en un coup d'oeil.</div>
+            </div>
+          </li>
+          <li class="ps-item">
+            <div class="ps-dot ps-dot-good">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#B8922A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="ps-item-label">Offres flash géolocalisées</div>
+              <div class="ps-item-desc">Touchez vos clients à 500m au moment exact où ils peuvent venir.</div>
+            </div>
+          </li>
+          <li class="ps-item">
+            <div class="ps-dot ps-dot-good">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#B8922A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="ps-item-label">Alerte anti-churn automatique</div>
+              <div class="ps-item-desc">Notifié dès qu'un habitué n'est plus revenu depuis 21 jours.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FEATURES PREVIEW
+============================================================ -->
+<section id="features-preview" aria-labelledby="features-title">
+  <div class="container">
+    <header class="section-header">
+      <div class="section-label fade-up">Fonctionnalités</div>
+      <h2 class="section-title fade-up d1" id="features-title">Tout ce qu'il vous faut,<br>rien de superflu</h2>
+      <p class="section-subtitle fade-up d2">Pour les clients comme pour les commerçants, CoLinker simplifie chaque étape de la relation de fidélité.</p>
+    </header>
+    <div class="features-grid">
+      <article class="fc fade-up d1">
+        <div class="fc-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="14" rx="3" stroke="#B8922A" stroke-width="1.5"/><path d="M2 9h18" stroke="#B8922A" stroke-width="1.5"/><circle cx="15.5" cy="13.5" r="1.5" fill="#B8922A"/><path d="M6 3h4" stroke="#B8922A" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <h3 class="fc-title">Wallet de fidélité</h3>
+        <p class="fc-desc">Toutes vos cartes en un seul endroit, triées par fréquence de visite et niveau de progression.</p>
+      </article>
+      <article class="fc fade-up d2">
+        <div class="fc-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2l2.5 6.5H20l-5.5 4 2 6.5L11 15l-5.5 4 2-6.5L2 8.5h6.5L11 2z" stroke="#B8922A" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <h3 class="fc-title">Tier system Premium</h3>
+        <p class="fc-desc">Standard, Silver, Gold, Platinum — la carte évolue visuellement avec le niveau du client.</p>
+      </article>
+      <article class="fc fade-up d3">
+        <div class="fc-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M13 2L4 12h7l-2 8 9-10h-7l2-8z" stroke="#B8922A" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <h3 class="fc-title">Offres flash</h3>
+        <p class="fc-desc">Promotions géolocalisées avec countdown. Le bon client au bon moment, sans dépense publicitaire.</p>
+      </article>
+      <article class="fc fade-up d1">
+        <div class="fc-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="4" y="4" width="14" height="14" rx="2" stroke="#B8922A" stroke-width="1.5"/><path d="M4 8h14M8 4v4M14 4v4" stroke="#B8922A" stroke-width="1.4" stroke-linecap="round"/><path d="M8 12h2v3H8zM12 12h2v3h-2z" fill="#B8922A"/></svg></div>
+        <h3 class="fc-title">Pass mensuel</h3>
+        <p class="fc-desc">Abonnement dédié par commerce — avantages exclusifs et revenus récurrents pour le commerçant.</p>
+      </article>
+      <article class="fc fade-up d2">
+        <div class="fc-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3C8 3 5.5 5.5 5.5 8.5c0 4.8 5.5 10.5 5.5 10.5s5.5-5.7 5.5-10.5C16.5 5.5 14 3 11 3z" stroke="#B8922A" stroke-width="1.5"/><circle cx="11" cy="8.5" r="2.5" stroke="#B8922A" stroke-width="1.3"/></svg></div>
+        <h3 class="fc-title">Explore local</h3>
+        <p class="fc-desc">Carte interactive des commerces du quartier — filtrés par catégorie, offre en cours et note.</p>
+      </article>
+      <article class="fc fade-up d3">
+        <div class="fc-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3.5A5 5 0 006 8.5v2.1L4.5 13h13l-1.5-2.4V8.5A5 5 0 0011 3.5z" stroke="#B8922A" stroke-width="1.5" stroke-linecap="round"/><path d="M9 13v.5a2 2 0 004 0V13" stroke="#B8922A" stroke-width="1.4" stroke-linecap="round"/><circle cx="16" cy="5" r="2.5" fill="#FF3B30"/></svg></div>
+        <h3 class="fc-title">Anti-churn automatique</h3>
+        <p class="fc-desc">Alerte à J+21 sans visite. Offre flash déclenchée en 1 tap — taux de reconquête moyen de 64%.</p>
+      </article>
+    </div>
+    <div style="text-align:center; margin-top:40px;" class="fade-up d4">
+      <a href="fonctionnalites.html" class="btn btn-gold-outline">Voir toutes les fonctionnalités</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TESTIMONIALS
+============================================================ -->
+<section id="testimonials" aria-labelledby="tc-title">
+  <div class="container">
+    <header class="section-header">
+      <div class="section-label fade-up">Témoignages</div>
+      <h2 class="section-title fade-up d1" id="tc-title">Ils ont franchi le pas</h2>
+      <p class="section-subtitle fade-up d2">Commerçants et clients — leurs mots valent mieux que les nôtres.</p>
+    </header>
+    <div class="tc-grid">
+      <article class="tc fade-up d1" itemscope itemtype="https://schema.org/Review">
+        <div class="tc-stars" aria-label="5 étoiles sur 5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote class="tc-quote" itemprop="reviewBody">"En 3 semaines, j'ai vu revenir des clients que je pensais perdus. Le dashboard m'a tout changé — je sais enfin qui vient, et quand relancer."</blockquote>
+        <div class="tc-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <div class="tc-avatar" aria-hidden="true">MT</div>
+          <div>
+            <div class="tc-name" itemprop="name">Marc T.</div>
+            <div class="tc-role">Gérant de café · Paris 11e</div>
+          </div>
+        </div>
+      </article>
+      <article class="tc fade-up d2" itemscope itemtype="https://schema.org/Review">
+        <div class="tc-stars" aria-label="5 étoiles sur 5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote class="tc-quote" itemprop="reviewBody">"Je ne perds plus jamais mes points. Et la roue de la fortune après chaque café c'est trop fun — j'attends le scan avec impatience."</blockquote>
+        <div class="tc-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <div class="tc-avatar" aria-hidden="true">LM</div>
+          <div>
+            <div class="tc-name" itemprop="name">Léa M.</div>
+            <div class="tc-role">Cliente régulière</div>
+          </div>
+        </div>
+      </article>
+      <article class="tc fade-up d3" itemscope itemtype="https://schema.org/Review">
+        <div class="tc-stars" aria-label="5 étoiles sur 5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote class="tc-quote" itemprop="reviewBody">"L'alerte churn c'est magique — j'envoie une offre flash et ils reviennent le jour même. J'ai récupéré 12 clients perdus en un mois."</blockquote>
+        <div class="tc-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <div class="tc-avatar" aria-hidden="true">SK</div>
+          <div>
+            <div class="tc-name" itemprop="name">Sarah K.</div>
+            <div class="tc-role">Gérante épicerie bio · Lyon 3e</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PRICING TEASER
+============================================================ -->
+<section id="pricing-teaser" aria-labelledby="pt-title">
+  <div class="container">
+    <header class="section-header">
+      <div class="section-label fade-up">Tarifs</div>
+      <h2 class="section-title fade-up d1" id="pt-title">Simple et transparent</h2>
+      <p class="section-subtitle fade-up d2">Commencez gratuitement. Passez Premium quand vous êtes prêt.</p>
+    </header>
+    <div class="pt-grid">
+      <div class="pt-card pt-free fade-up d1">
+        <div class="pt-plan">Gratuit</div>
+        <div class="pt-price">
+          <span class="pt-cur">€</span>
+          <span class="pt-amt">0</span>
+          <span class="pt-per">/mois</span>
+        </div>
+        <ul class="pt-features">
+          <li class="pt-f"><div class="pt-check check-std"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#1A1A1A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Jusqu'à 150 clients actifs</li>
+          <li class="pt-f"><div class="pt-check check-std"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#1A1A1A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Scanner QR + OTP</li>
+          <li class="pt-f"><div class="pt-check check-std"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#1A1A1A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Dashboard basique</li>
+          <li class="pt-f"><div class="pt-check check-std"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#1A1A1A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Offres flash (3/mois)</li>
+        </ul>
+        <a href="tarifs.html" class="btn btn-dark" style="width:100%">Commencer gratuitement</a>
+      </div>
+      <div class="pt-card pt-premium fade-up d2">
+        <div class="pt-badge">Plus populaire</div>
+        <div class="pt-plan">Premium</div>
+        <div class="pt-price">
+          <span class="pt-cur" style="color:var(--gold)">€</span>
+          <span class="pt-amt" style="color:var(--gold)">59</span>
+          <span class="pt-per">/mois</span>
+        </div>
+        <ul class="pt-features">
+          <li class="pt-f"><div class="pt-check check-prem"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#B8922A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Clients illimités</li>
+          <li class="pt-f"><div class="pt-check check-prem"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#B8922A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Analytics LTV, churn, heatmap</li>
+          <li class="pt-f"><div class="pt-check check-prem"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#B8922A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Pass mensuels clients</li>
+          <li class="pt-f"><div class="pt-check check-prem"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#B8922A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Priorité Explore local + Support 7j/7</li>
+        </ul>
+        <a href="tarifs.html" class="btn btn-gold" style="width:100%">Passer Premium</a>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:20px;" class="fade-up d3">
+      <a href="tarifs.html" style="font-size:13px; font-weight:300; color:var(--text-secondary); border-bottom:1px solid var(--border);">Comparer les plans en détail →</a>
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CTA FINAL
+============================================================ -->
+<section id="cta-final" aria-label="Appel à l'action">
+  <div class="container">
+    <span class="cf-label fade-up">Prêt à commencer ?</span>
+    <h2 class="cf-title fade-up d1">Votre quartier vous attend.</h2>
+    <p class="cf-sub fade-up d2">Rejoignez les commerçants qui ont choisi la fidélité moderne. Gratuit, sans engagement, opérationnel en 10 minutes.</p>
+    <div class="cf-btns fade-up d3">
+      <a href="telecharger.html" class="btn btn-gold" style="padding:15px 32px;font-size:16px;">
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M8.5 2v9M6 8.5l2.5 2.5 2.5-2.5M2.5 14h12" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Télécharger CoLinker
+      </a>
+      <a href="commercants.html" class="btn btn-white-outline" style="padding:15px 32px;font-size:16px;">Voir la démo commerçant</a>
+    </div>
+    <div class="cf-stores fade-up d4">
+      <div class="cs-item">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor"><path d="M13.5 9.6c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.6-1.3-.1-2.5.7-3.2.7-.6 0-1.6-.7-2.7-.7-1.4 0-2.7.8-3.4 2-1.4 2.5-.4 6.2 1 8.2.7 1 1.5 2.1 2.6 2.1 1 0 1.4-.7 2.6-.7 1.2 0 1.6.7 2.7.7 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2-.8-2-3.2zM11.3 3.3c.6-.7 1-1.7.9-2.7-1 0-2.1.6-2.8 1.3-.6.7-1.1 1.7-1 2.7 1.1.1 2.2-.5 2.9-1.3z"/></svg>
+        App Store
+      </div>
+      <div class="cs-item">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor"><path d="M3 2.5l8 6.5-8 6.5V2.5zM3 2.5L13 8l-3 2.5L3 2.5zM3 15.5L13 10l-3-2.5L3 15.5zM13 8l3 1.5L13 11V8z" opacity=".7"/></svg>
+        Google Play
+      </div>
+      <div class="cs-item">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9a7 7 0 1014 0A7 7 0 002 9z" stroke="currentColor" stroke-width="1.3"/><path d="M9 5.5V9l2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Disponible en France
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="co">Co</span><span class="linker">Linker</span></div>
+        <p class="footer-tagline">Le lien qui fidélise.<br>Connecter commerçants et clients de quartier depuis 2024.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="TikTok">
+            <svg viewBox="0 0 16 16" fill="rgba(26,26,26,0.55)"><path d="M11 1c0 2 1.6 3.3 3 3.4v2.2c-1.1 0-2.2-.4-3-1v4.9c0 2.5-2 4.5-4.5 4.5S2 13 2 10.5 4 6 6.5 6v2.2C5.1 8.2 4 9.2 4 10.5c0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5V1h2z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1.5" y="1.5" width="13" height="13" rx="3.5" stroke="rgba(26,26,26,0.55)" stroke-width="1.3"/><circle cx="8" cy="8" r="3" stroke="rgba(26,26,26,0.55)" stroke-width="1.3"/><circle cx="11.5" cy="4.5" r=".9" fill="rgba(26,26,26,0.55)"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1.5" y="1.5" width="13" height="13" rx="3" stroke="rgba(26,26,26,0.55)" stroke-width="1.3"/><path d="M5 6.5v5M5 4.5v.3M8 11.5V9c0-1.4.8-2.5 2-2.5s2 1 2 2.5v2.5M8 6.5v5" stroke="rgba(26,26,26,0.55)" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Produit</div>
+        <ul>
+          <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="commercants.html">Pour les commerçants</a></li>
+          <li><a href="telecharger.html">Télécharger</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Ressources</div>
+        <ul>
+          <li><a href="#">Centre d'aide</a></li>
+          <li><a href="#">Guide de démarrage</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Presse</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Légal</div>
+        <ul>
+          <li><a href="#">CGU</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Supprimer mon compte</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 CoLinker. Fait avec <span class="heart">♥</span> en France.</span>
+      <div class="footer-badges">
+        <span class="footer-badge">
+          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1l1.5 3.5H11l-2.8 2 1 3.5L6 8 2.8 10l1-3.5L1 4.5h3.5L6 1z" stroke="rgba(26,26,26,0.5)" stroke-width="1" stroke-linejoin="round"/></svg>
+          4,9 App Store
+        </span>
+        <span class="footer-badge">
+          <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="rgba(26,26,26,0.5)" stroke-width="1"/><path d="M6 3.5v3l1.5 1" stroke="rgba(26,26,26,0.5)" stroke-width="1" stroke-linecap="round"/></svg>
+          RGPD conforme
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
