@@ -1,134 +1,147 @@
 /* ================================================================
-   COLINKER REBORN — PREMIUM DESIGN SYSTEM
+   COLINKER ULTRA-PREMIUM — DESIGN SYSTEM 2026
 ================================================================ */
 
 :root {
-  /* Palette raffinée */
-  --bg-main: #FDFDFB;
-  --bg-subtle: #F7F5F0;
+  /* Palette "Champagne & Obsidian" */
+  --accent: #D4AF37;
+  --accent-glow: rgba(212, 175, 55, 0.3);
+  --bg: #FDFCF9;
   --surface: #FFFFFF;
-  --gold: #B8922A;
-  --gold-hover: #967520;
-  --text-main: #1C1C1E;
-  --text-muted: #636366;
+  --text-main: #121212;
+  --text-sub: #666666;
+  --border: rgba(0, 0, 0, 0.05);
   
-  /* Systèmes de bordures et ombres */
-  --border: rgba(0, 0, 0, 0.06);
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-  --shadow-md: 0 12px 30px rgba(0,0,0,0.08);
-  --radius-lg: 20px;
-  --radius-pill: 50px;
+  /* Systèmes */
+  --shadow-lux: 0 20px 50px rgba(0,0,0,0.05);
+  --radius: 24px;
+  --transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-/* ── FONDAMENTAUX ────────────────────────────────────────── */
+/* ── RESET & SMOOTHING ───────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
 body {
   font-family: 'Figtree', sans-serif;
+  background-color: var(--bg);
   color: var(--text-main);
-  background-color: var(--bg-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
-/* ── NAVIGATION (GLASSMORPHISM) ──────────────────────────── */
+/* ── TYPOGRAPHIE HAUT DE GAMME ──────────────────────────── */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.hero-h1 {
+  font-size: clamp(54px, 8vw, 92px);
+  line-height: 0.95;
+  background: linear-gradient(135deg, #121212 30%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 24px;
+}
+
+/* ── NAVIGATION GLASS ────────────────────────────────────── */
 #nav {
   position: fixed;
   top: 0; left: 0; right: 0;
+  height: 90px;
   z-index: 1000;
-  height: 80px;
   display: flex;
   align-items: center;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: var(--transition);
 }
 
 #nav.scrolled {
   height: 70px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(253, 252, 249, 0.7);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-}
-
-.nav-logo {
-  font-size: 22px;
-  font-weight: 700;
-  text-decoration: none;
-  color: var(--text-main);
-  letter-spacing: -0.5px;
 }
 
 .nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-main);
   text-decoration: none;
-  color: var(--text-muted);
-  font-weight: 500;
-  font-size: 15px;
-  margin: 0 15px;
-  transition: color 0.3s;
+  opacity: 0.6;
+  transition: var(--transition);
 }
 
-.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover { opacity: 1; color: var(--accent); }
 
-/* ── BOUTONS HAUT DE GAMME ───────────────────────────────── */
+/* ── BOUTONS MAGNÉTIQUES ─────────────────────────────────── */
 .btn {
-  padding: 14px 28px;
-  border-radius: var(--radius-pill);
+  padding: 18px 36px;
+  border-radius: var(--radius);
   font-weight: 600;
-  transition: all 0.3s transform cubic-bezier(0.34, 1.56, 0.64, 1);
-  border: none;
-  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  transition: var(--transition);
+  border: 1px solid transparent;
 }
 
 .btn-gold {
-  background: var(--gold);
+  background: var(--text-main);
   color: #fff;
-  box-shadow: 0 4px 15px rgba(184, 146, 42, 0.25);
 }
 
 .btn-gold:hover {
-  background: var(--gold-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(184, 146, 42, 0.35);
+  background: var(--accent);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 30px var(--accent-glow);
 }
 
-/* ── CARDS (EFFET ÉPURÉ) ──────────────────────────────────── */
-.step-card, .price-card, .testi-card {
+/* ── CARDS & SECTIONS ────────────────────────────────────── */
+section { padding: 140px 0; }
+
+.card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  transition: all 0.4s ease;
+  border-radius: var(--radius);
+  padding: 48px;
+  box-shadow: var(--shadow-lux);
+  transition: var(--transition);
 }
 
-.step-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(184, 146, 42, 0.2);
+.card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
 }
 
-/* ── TITRES ──────────────────────────────────────────────── */
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  line-height: 1.2;
+/* Animation "Floating" pour le mockup */
+.float {
+  animation: floating 6s ease-in-out infinite;
 }
 
-.hero-h1 {
-  font-size: clamp(40px, 6vw, 72px);
-  letter-spacing: -2px;
-  margin-bottom: 20px;
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
-/* ── FOOTER ──────────────────────────────────────────────── */
+/* ── FOOTER ÉPURÉ ────────────────────────────────────────── */
 footer {
-  background: var(--bg-subtle);
-  padding: 80px 0 40px;
-  border-top: 1px solid var(--border);
+  padding: 100px 0 50px;
+  background: #121212;
+  color: rgba(255,255,255,0.6);
 }
+
+footer a { color: #fff; text-decoration: none; opacity: 0.5; transition: 0.3s; }
+footer a:hover { opacity: 1; color: var(--accent); }
