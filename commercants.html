@@ -1,20 +1,756 @@
-<section id="features-detail">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO ─────────────────────────────────────────────────── -->
+  <title>CoLinker pour les commerçants — Fidélisez votre clientèle sans effort</title>
+  <meta name="description" content="CoLinker aide les commerçants indépendants (cafés, boulangeries, épiceries) à fidéliser leurs clients : scanner QR, dashboard temps réel, anti-churn automatique, offres flash. Gratuit pour démarrer." />
+  <meta name="keywords" content="logiciel fidélisation client boulangerie, application fidélité café restaurant, programme fidélité commerçant indépendant, dashboard clientèle commerce, anti-churn client commerce, scanner fidélité QR code" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.colinker.fr/commercants.html" />
+  <meta property="og:title"       content="CoLinker pour les commerçants — Fidélisez sans effort" />
+  <meta property="og:description" content="Dashboard temps réel, scanner QR, alertes anti-churn, offres flash. Tout ce qu'un commerçant indépendant a besoin pour fidéliser sa clientèle." />
+  <meta property="og:url"         content="https://www.colinker.fr/commercants.html" />
+  <meta property="og:site_name"   content="CoLinker" />
+  <meta property="og:locale"      content="fr_FR" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "CoLinker pour les commerçants",
+    "url": "https://www.colinker.fr/commercants.html",
+    "description": "Solution de fidélisation digitale pour commerçants indépendants : cafés, boulangeries, épiceries, restaurants",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.colinker.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Commerçants", "item": "https://www.colinker.fr/commercants.html" }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+
+  <style>
+    /* ── PAGE HERO ──────────────────────────────────────────── */
+    #page-hero {
+      padding: 140px 0 88px;
+      background: var(--bg-main);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 64px;
+    }
+    .ph-breadcrumb {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 300; color: var(--text-tertiary);
+      margin-bottom: 24px;
+    }
+    .ph-breadcrumb a { color: var(--text-secondary); transition: color .2s; }
+    .ph-breadcrumb a:hover { color: var(--text-primary); }
+    .hero-h1 {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.1; margin-bottom: 20px;
+    }
+    .hero-sub {
+      font-size: 17px; font-weight: 300; color: var(--text-secondary);
+      line-height: 1.7; max-width: 480px; margin-bottom: 36px;
+    }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+
+    /* ROI bar */
+    .roi-bar {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      background: var(--surface);
+      border: 0.5px solid var(--border-gold);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    .roi-item {
+      padding: 18px 20px;
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+    .roi-item:last-child { border-right: none; }
+    .roi-num  { font-weight: 600; font-size: 22px; color: var(--text-primary); line-height: 1; margin-bottom: 5px; }
+    .roi-num span { color: var(--gold); }
+    .roi-label{ font-size: 11px; font-weight: 300; color: var(--text-secondary); line-height: 1.4; }
+
+    /* ── PAIN POINTS ────────────────────────────────────────── */
+    #pain-points { background: var(--bg-warm); }
+    .pain-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    .pain-card {
+      background: var(--surface); border: 0.5px solid var(--border);
+      border-radius: var(--r-xl); padding: 28px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+    .pain-icon {
+      width: 44px; height: 44px; border-radius: 13px;
+      background: rgba(255,59,48,.07);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .pain-title { font-weight: 600; font-size: 15px; margin-bottom: 8px; color: var(--text-primary); }
+    .pain-desc  { font-size: 13px; font-weight: 300; color: var(--text-secondary); line-height: 1.6; }
+    .pain-stat  {
+      display: inline-block; margin-top: 12px;
+      font-size: 20px; font-weight: 600; color: var(--red);
+    }
+
+    /* ── SOLUTION BLOCKS ────────────────────────────────────── */
+    #solutions { background: var(--bg-main); }
+    .sol-block {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: center;
+      padding: 72px 0; border-bottom: 1px solid var(--border);
+    }
+    .sol-block:last-of-type { border-bottom: none; padding-bottom: 0; }
+    .sol-block.rev { direction: rtl; }
+    .sol-block.rev > * { direction: ltr; }
+    .sol-label { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .sol-title { font-weight: 600; font-size: clamp(22px, 2.8vw, 30px); line-height: 1.25; margin-bottom: 14px; }
+    .sol-desc  { font-size: 16px; font-weight: 300; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; }
+    .sol-points { display: flex; flex-direction: column; gap: 11px; }
+    .sol-point  {
+      display: flex; align-items: flex-start; gap: 11px;
+      font-size: 14px; font-weight: 300; color: var(--text-secondary);
+    }
+    .sol-point-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
+    .sol-visual { display: flex; justify-content: center; }
+
+    /* ── DASHBOARD WIDGET ───────────────────────────────────── */
+    .dboard-widget {
+      background: var(--surface);
+      border: 0.5px solid var(--border-gold);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .dw-top {
+      background: var(--dark-bar);
+      padding: 20px 24px 16px;
+    }
+    .dw-top-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+    .dw-top-title { font-weight: 600; font-size: 16px; color: #fff; }
+    .dw-top-date  { font-size: 12px; font-weight: 300; color: rgba(255,255,255,.45); margin-top: 2px; }
+    .dw-kpis {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+    }
+    .dw-kpi {}
+    .dw-kpi-val   { font-weight: 600; font-size: 20px; color: #fff; line-height: 1; }
+    .dw-kpi-label { font-size: 10px; font-weight: 300; color: rgba(255,255,255,.45); margin-top: 3px; }
+    .dw-kpi-delta { font-size: 10px; font-weight: 600; color: var(--green); margin-top: 4px; }
+    .dw-kpi-delta.warn { color: var(--orange); }
+    .dw-body { padding: 20px 24px; }
+    .dw-chart-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--text-secondary); margin-bottom: 12px; }
+    .dw-chart {
+      display: flex; align-items: flex-end; gap: 6px;
+      height: 72px; margin-bottom: 20px;
+    }
+    .dw-bwrap { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 5px; }
+    .dw-bar   { width: 100%; background: var(--gold-xlight); border-radius: 4px 4px 0 0; transition: height 1.2s cubic-bezier(.22,1,.36,1); }
+    .dw-bar.a { background: var(--gold); }
+    .dw-bday  { font-size: 10px; font-weight: 300; color: var(--text-tertiary); }
+    .dw-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .dw-stat-box {}
+    .dw-stat-val { font-weight: 600; font-size: 18px; color: var(--text-primary); }
+    .dw-stat-lbl { font-size: 11px; font-weight: 300; color: var(--text-secondary); margin-top: 3px; }
+
+    /* ── CHURN WIDGET ───────────────────────────────────────── */
+    .churn-widget {
+      background: var(--surface);
+      border: 0.5px solid var(--border-gold);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .cw-header {
+      padding: 18px 22px 14px;
+      display: flex; justify-content: space-between; align-items: flex-start;
+      border-bottom: 1px solid var(--border);
+    }
+    .cw-title { font-weight: 600; font-size: 15px; margin-bottom: 3px; }
+    .cw-sub   { font-size: 12px; font-weight: 300; color: var(--text-secondary); }
+    .cw-body  { padding: 14px 22px; }
+    .cw-alert {
+      background: rgba(255,59,48,.05);
+      border: 0.5px solid rgba(255,59,48,.15);
+      border-radius: var(--r-card);
+      padding: 14px 16px;
+      display: flex; gap: 12px; align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .cw-alert-icon {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: rgba(255,59,48,.1);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .cw-alert-title { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+    .cw-alert-sub   { font-size: 11px; font-weight: 300; color: var(--text-secondary); }
+    .cw-clients { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .cw-client  {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 12px;
+      background: var(--bg-warm); border-radius: var(--r-card);
+    }
+    .cw-av    { width: 30px; height: 30px; border-radius: 50%; background: var(--gold-bg); border: 0.5px solid var(--border-gold); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: var(--gold); flex-shrink: 0; }
+    .cw-info  { flex: 1; }
+    .cw-name  { font-size: 12px; font-weight: 600; color: var(--text-primary); }
+    .cw-days  { font-size: 10px; font-weight: 300; color: var(--text-secondary); }
+    .cw-risk  { font-size: 10px; font-weight: 600; color: var(--red); background: rgba(255,59,48,.08); padding: 2px 9px; border-radius: 100px; }
+    .cw-risk.med { color: var(--orange); background: rgba(255,149,0,.08); }
+    .cw-action {
+      width: 100%; padding: 13px;
+      background: var(--dark-bar); color: #fff;
+      border-radius: var(--r-large); font-size: 13px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: background .2s;
+    }
+    .cw-action:hover { background: #2d2d2d; }
+    .cw-footer { padding: 12px 22px; border-top: 1px solid var(--border); text-align: center; }
+    .cw-stat   { font-size: 12px; font-weight: 300; color: var(--text-secondary); }
+    .cw-stat strong { font-weight: 600; color: var(--green); }
+
+    /* ── USE CASES ──────────────────────────────────────────── */
+    #use-cases { background: var(--bg-warm); }
+    .uc-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    .uc-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border-gold);
+      border-radius: var(--r-xl);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .uc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); border-color: rgba(184,146,42,.35); }
+    .uc-emoji  { font-size: 32px; margin-bottom: 16px; display: block; }
+    .uc-type   { font-weight: 600; font-size: 15px; margin-bottom: 8px; }
+    .uc-desc   { font-size: 13px; font-weight: 300; color: var(--text-secondary); line-height: 1.65; margin-bottom: 16px; }
+    .uc-result {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 12px;
+      background: var(--gold-bg);
+      border: 0.5px solid var(--border-gold);
+      border-radius: var(--r-card);
+    }
+    .uc-result-label { font-size: 12px; font-weight: 300; color: var(--text-secondary); }
+    .uc-result-val   { font-size: 13px; font-weight: 600; color: var(--gold); }
+
+    /* ── MERCHANT TESTIMONIALS ──────────────────────────────── */
+    #merchant-tc { background: var(--bg-main); }
+    .mtc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .mtc { background: var(--surface); border: 0.5px solid var(--border-gold); border-radius: var(--r-xl); padding: 28px 24px; box-shadow: var(--shadow-soft); }
+    .mtc-stars { display: flex; gap: 2px; margin-bottom: 14px; }
+    .mtc-stars span { font-size: 13px; color: var(--gold); }
+    .mtc-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; line-height: 1.65; color: var(--text-primary); margin-bottom: 18px; }
+    .mtc-author { display: flex; align-items: center; gap: 11px; }
+    .mtc-av  { width: 38px; height: 38px; border-radius: 50%; background: var(--gold-bg); border: 0.5px solid var(--border-gold); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: var(--gold); flex-shrink: 0; }
+    .mtc-name{ font-weight: 600; font-size: 13px; }
+    .mtc-role{ font-size: 11px; font-weight: 300; color: var(--text-secondary); }
+
+    /* ── QR ONBOARDING ──────────────────────────────────────── */
+    .onboarding-widget {
+      background: var(--surface);
+      border: 0.5px solid var(--border-gold);
+      border-radius: var(--r-xl);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+    .ob-title { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+    .ob-sub   { font-size: 12px; font-weight: 300; color: var(--text-secondary); margin-bottom: 20px; }
+    .ob-steps { display: flex; flex-direction: column; gap: 12px; }
+    .ob-step  { display: flex; gap: 14px; align-items: flex-start; }
+    .ob-num   {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--dark-bar); color: #fff;
+      font-size: 12px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .ob-num.done { background: var(--green); }
+    .ob-step-title { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+    .ob-step-sub   { font-size: 11px; font-weight: 300; color: var(--text-secondary); }
+    .ob-progress-wrap { margin-top: 20px; }
+    .ob-progress-label { display: flex; justify-content: space-between; font-size: 11px; font-weight: 300; color: var(--text-secondary); margin-bottom: 6px; }
+    .ob-progress { height: 4px; background: var(--border); border-radius: 100px; overflow: hidden; }
+    .ob-progress-bar { height: 100%; background: var(--gold); border-radius: 100px; width: 30%; }
+    .ob-cta { margin-top: 18px; width: 100%; padding: 13px; background: var(--gold); color: #fff; border-radius: var(--r-large); font-size: 13px; font-weight: 600; text-align: center; display: block; transition: background .2s; }
+    .ob-cta:hover { background: var(--gold-light); }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .sol-block { grid-template-columns: 1fr; gap: 40px; }
+      .sol-block.rev { direction: ltr; }
+      .pain-grid { grid-template-columns: 1fr 1fr; }
+      .uc-grid { grid-template-columns: 1fr 1fr; }
+      .dw-kpis { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      #page-hero { padding: 120px 0 72px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-sub { max-width: 100%; }
+      .hero-ctas { flex-wrap: wrap; }
+      .roi-bar { grid-template-columns: 1fr; }
+      .roi-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .roi-item:last-child { border-bottom: none; }
+      .mtc-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .pain-grid { grid-template-columns: 1fr; }
+      .uc-grid { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; }
+      .dw-kpis { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
   <div class="container">
-    <div class="section-header">
-      <h2 class="h2-title">Tout pour piloter votre activité</h2>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="co">Co</span><span class="linker">Linker</span></a>
+      <div class="nav-links">
+        <a href="fonctionnalites.html">Fonctionnalités</a>
+        <a href="tarifs.html">Tarifs</a>
+        <a href="commercants.html" class="active">Commerçants</a>
+        <a href="telecharger.html">Télécharger</a>
+      </div>
+      <div class="nav-right">
+        <a href="telecharger.html" class="btn btn-dark">Télécharger gratuitement</a>
+        <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
     </div>
-    
-    <div class="features-list">
-      <div class="feature-item">
-        <div class="feature-text">
-          <h3>Dashboard Temps Réel</h3>
-          <p>Suivez vos ventes et l'engagement de vos clients en un coup d'œil. Identifiez vos ambassadeurs et réactivez les clients perdus.</p>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="fonctionnalites.html" onclick="closeMobile()">Fonctionnalités</a>
+  <a href="tarifs.html" onclick="closeMobile()">Tarifs</a>
+  <a href="commercants.html" class="active" onclick="closeMobile()">Commerçants</a>
+  <a href="telecharger.html" onclick="closeMobile()">Télécharger</a>
+  <a href="telecharger.html" class="btn btn-dark" onclick="closeMobile()">Télécharger gratuitement</a>
+</div>
+
+
+<main>
+<!-- PAGE HERO -->
+<section id="page-hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <nav class="ph-breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          <span>Commerçants</span>
+        </nav>
+        <div class="tag-pill fade-up"><span class="dot"></span>Pour les indépendants</div>
+        <h1 class="hero-h1 fade-up d1">Votre clientèle fidèle<br>commence ici.</h1>
+        <p class="hero-sub fade-up d2">CoLinker donne aux commerçants indépendants les mêmes outils de fidélisation que les grandes chaînes — sans les coûts, sans la complexité, opérationnel en 10 minutes.</p>
+        <div class="hero-ctas fade-up d3">
+          <a href="telecharger.html" class="btn btn-dark">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2v8M5 7.5l2.5 2.5 2.5-2.5M2.5 12.5h10" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Démarrer gratuitement
+          </a>
+          <a href="tarifs.html" class="btn btn-gold-outline">Voir les tarifs</a>
         </div>
-        <div class="feature-image">
-          <div class="img-mockup"></div>
+        <div class="roi-bar fade-up d4">
+          <div class="roi-item">
+            <div class="roi-num">+<span>64%</span></div>
+            <div class="roi-label">Taux de reconquête<br>clients inactifs</div>
+          </div>
+          <div class="roi-item">
+            <div class="roi-num"><span>3×</span></div>
+            <div class="roi-label">Conversion vs flyers<br>papier</div>
+          </div>
+          <div class="roi-item">
+            <div class="roi-num"><span>10</span> min</div>
+            <div class="roi-label">Pour être opérationnel<br>dès le premier scan</div>
+          </div>
         </div>
       </div>
-      
+      <!-- Onboarding widget -->
+      <div class="fade-up d3">
+        <div class="onboarding-widget">
+          <div class="ob-title">Créez votre espace en 3 étapes</div>
+          <div class="ob-sub">Votre tableau de bord vous attend</div>
+          <div class="ob-steps">
+            <div class="ob-step">
+              <div class="ob-num done">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <div class="ob-step-title">Créer votre compte</div>
+                <div class="ob-step-sub">Nom, commerce, adresse — 2 minutes</div>
+              </div>
+            </div>
+            <div class="ob-step">
+              <div class="ob-num" style="background:var(--gold)">2</div>
+              <div>
+                <div class="ob-step-title">Configurer votre programme</div>
+                <div class="ob-step-sub">Règles de points, récompenses, design de la carte</div>
+              </div>
+            </div>
+            <div class="ob-step">
+              <div class="ob-num" style="background:rgba(26,26,26,0.15);color:var(--text-tertiary)">3</div>
+              <div>
+                <div class="ob-step-title">Afficher votre QR code</div>
+                <div class="ob-step-sub">À la caisse — premier client en quelques minutes</div>
+              </div>
+            </div>
+          </div>
+          <div class="ob-progress-wrap">
+            <div class="ob-progress-label">
+              <span>Progression</span>
+              <span style="font-weight:600;color:var(--gold)">Étape 2 / 3</span>
+            </div>
+            <div class="ob-progress"><div class="ob-progress-bar" style="width:66%"></div></div>
+          </div>
+          <a href="telecharger.html" class="ob-cta">Continuer la configuration →</a>
+        </div>
       </div>
+    </div>
   </div>
 </section>
+
+
+<!-- PAIN POINTS -->
+<section id="pain-points" aria-labelledby="pp-title">
+  <div class="container">
+    <header class="section-header">
+      <div class="section-label fade-up">Le vrai problème</div>
+      <h2 class="section-title fade-up d1" id="pp-title">Vos clients reviennent.<br>Mais vous ne le savez pas.</h2>
+      <p class="section-subtitle fade-up d2">Sans outil digital, chaque passage est une opportunité manquée de fidéliser, d'analyser et de reconquérir.</p>
+    </header>
+    <div class="pain-grid">
+      <div class="pain-card fade-up d1">
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2C7.7 2 5 4.7 5 8c0 5 6 12 6 12s6-7 6-12c0-3.3-2.7-6-6-6z" stroke="#FF3B30" stroke-width="1.5"/><path d="M9 8h4M11 6v4" stroke="#FF3B30" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="pain-title">Carte perdue = client perdu</div>
+        <div class="pain-desc">1 client sur 3 abandonne son programme de fidélité parce qu'il a perdu sa carte. Tout votre investissement réduit à néant.</div>
+        <span class="pain-stat">33%</span>
+      </div>
+      <div class="pain-card fade-up d2">
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#FF3B30" stroke-width="1.5"/><path d="M11 7v5M11 14.5v.5" stroke="#FF3B30" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="pain-title">Zéro visibilité sur vos clients</div>
+        <div class="pain-desc">Vous ne savez pas qui sont vos meilleurs clients, pourquoi ils partent, ni quand les relancer. Impossible de piloter sans données.</div>
+        <span class="pain-stat">0 data</span>
+      </div>
+      <div class="pain-card fade-up d3">
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="5" width="16" height="14" rx="2.5" stroke="#FF3B30" stroke-width="1.5"/><path d="M8 5V3M14 5V3M3 10h16" stroke="#FF3B30" stroke-width="1.4" stroke-linecap="round"/><path d="M7 14l2 2 6-4" stroke="#FF3B30" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/></svg>
+        </div>
+        <div class="pain-title">Vous apprenez les départs trop tard</div>
+        <div class="pain-desc">Un habitué disparaît — vous ne l'apprenez que quand il est déjà chez le concurrent. Sans alerte, impossible de réagir à temps.</div>
+        <span class="pain-stat">−21 j</span>
+      </div>
+      <div class="pain-card fade-up d1">
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 14l4-4 3 3 4-5 3 3" stroke="#FF3B30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="4" width="18" height="14" rx="2.5" stroke="#FF3B30" stroke-width="1.5" opacity=".4"/></svg>
+        </div>
+        <div class="pain-title">Flyers et SMS ignorés</div>
+        <div class="pain-desc">58% des SMS promotionnels ne sont jamais ouverts. 42% des flyers finissent à la poubelle avant d'être lus. Budget marketing gaspillé.</div>
+        <span class="pain-stat">42%</span>
+      </div>
+      <div class="pain-card fade-up d2">
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 17c0-4.4 2.7-8 6-8s6 3.6 6 8" stroke="#FF3B30" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="6" r="3" stroke="#FF3B30" stroke-width="1.5"/><path d="M3 11l2 2M19 11l-2 2" stroke="#FF3B30" stroke-width="1.3" stroke-linecap="round" opacity=".5"/></svg>
+        </div>
+        <div class="pain-title">Nouveaux clients anonymes</div>
+        <div class="pain-desc">Chaque nouveau visage reste inconnu. Sans captation automatique des coordonnées, vous ne pouvez jamais le recontacter.</div>
+        <span class="pain-stat">0 contact</span>
+      </div>
+      <div class="pain-card fade-up d3">
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#FF3B30" stroke-width="1.5"/><path d="M11 8v3l2 2" stroke="#FF3B30" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="pain-title">Trop de temps, trop de friction</div>
+        <div class="pain-desc">Tampon, stylo, caissier distrait — à chaque passage, la fidélité papier crée de la friction qui décourage clients et équipe.</div>
+        <span class="pain-stat">3× plus long</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SOLUTIONS -->
+<section id="solutions" aria-labelledby="sol-title">
+  <div class="container">
+    <header class="section-header">
+      <div class="section-label fade-up">La solution</div>
+      <h2 class="section-title fade-up d1" id="sol-title">CoLinker résout tout ça,<br>en 10 minutes chrono</h2>
+    </header>
+
+    <!-- Dashboard -->
+    <div class="sol-block">
+      <div class="sol-visual fade-up d2">
+        <div class="dboard-widget">
+          <div class="dw-top">
+            <div class="dw-top-row">
+              <div>
+                <div class="dw-top-title">Dashboard</div>
+                <div class="dw-top-date">Samedi 12 avril · Café Lumière</div>
+              </div>
+              <span class="metric-chip chip-green" style="font-size:11px">En direct</span>
+            </div>
+            <div class="dw-kpis">
+              <div class="dw-kpi"><div class="dw-kpi-val">47</div><div class="dw-kpi-label">Scans aujourd'hui</div><div class="dw-kpi-delta">↑ +18%</div></div>
+              <div class="dw-kpi"><div class="dw-kpi-val">183</div><div class="dw-kpi-label">Clients actifs</div><div class="dw-kpi-delta">↑ +6</div></div>
+              <div class="dw-kpi"><div class="dw-kpi-val">68%</div><div class="dw-kpi-label">Rétention sem.</div><div class="dw-kpi-delta warn">→ stable</div></div>
+              <div class="dw-kpi"><div class="dw-kpi-val">342€</div><div class="dw-kpi-label">MRR pass</div><div class="dw-kpi-delta">↑ +22%</div></div>
+            </div>
+          </div>
+          <div class="dw-body">
+            <div class="dw-chart-label">Scans — 7 derniers jours</div>
+            <div class="dw-chart" id="chartWeek">
+              <div class="dw-bwrap"><div class="dw-bar" style="height:0" data-h="55%"></div><div class="dw-bday">L</div></div>
+              <div class="dw-bwrap"><div class="dw-bar" style="height:0" data-h="72%"></div><div class="dw-bday">M</div></div>
+              <div class="dw-bwrap"><div class="dw-bar" style="height:0" data-h="60%"></div><div class="dw-bday">M</div></div>
+              <div class="dw-bwrap"><div class="dw-bar" style="height:0" data-h="85%"></div><div class="dw-bday">J</div></div>
+              <div class="dw-bwrap"><div class="dw-bar" style="height:0" data-h="92%"></div><div class="dw-bday">V</div></div>
+              <div class="dw-bwrap"><div class="dw-bar a" style="height:0" data-h="100%"></div><div class="dw-bday">S</div></div>
+              <div class="dw-bwrap"><div class="dw-bar" style="height:0" data-h="48%"></div><div class="dw-bday">D</div></div>
+            </div>
+            <div class="dw-grid3">
+              <div class="dw-stat-box"><div class="dw-stat-val">4,2</div><div class="dw-stat-lbl">Visites/client/mois</div></div>
+              <div class="dw-stat-box"><div class="dw-stat-val">28€</div><div class="dw-stat-lbl">LTV moyenne</div></div>
+              <div class="dw-stat-box"><div class="dw-stat-val">4,9★</div><div class="dw-stat-lbl">Note Google</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sol-text fade-up">
+        <div class="sol-label">Analytics temps réel</div>
+        <h3 class="sol-title">Pilotez votre fidélité comme un pro</h3>
+        <p class="sol-desc">Scans du jour, clients actifs, rétention, MRR — tout en direct depuis votre téléphone ou ordinateur. Fini le pilotage à l'aveugle.</p>
+        <ul class="sol-points">
+          <li class="sol-point"><span class="sol-point-dot"></span>Vue temps réel : chaque scan visible dans les 3 secondes</li>
+          <li class="sol-point"><span class="sol-point-dot"></span>Comparaison semaine N vs N-1 automatique</li>
+          <li class="sol-point"><span class="sol-point-dot"></span>LTV, heatmap des visites et taux de churn (Premium)</li>
+          <li class="sol-point"><span class="sol-point-dot"></span>Export CSV de votre base clients en 1 clic</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Anti-churn -->
+    <div class="sol-block rev">
+      <div class="sol-visual fade-up d2">
+        <div class="churn-widget">
+          <div class="cw-header">
+            <div>
+              <div class="cw-title">Alertes anti-churn</div>
+              <div class="cw-sub">3 clients n'ont pas visité depuis 21+ jours</div>
+            </div>
+            <span class="metric-chip chip-red" style="font-size:11px">3 alertes</span>
+          </div>
+          <div class="cw-body">
+            <div class="cw-alert">
+              <div class="cw-alert-icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1l7 13H1L8 1z" stroke="#FF3B30" stroke-width="1.3" stroke-linejoin="round"/><path d="M8 6v4M8 11.5v.5" stroke="#FF3B30" stroke-width="1.3" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <div class="cw-alert-title">Action recommandée</div>
+                <div class="cw-alert-sub">Envoyez une offre flash ciblée pour les reconquérir</div>
+              </div>
+            </div>
+            <div class="cw-clients">
+              <div class="cw-client">
+                <div class="cw-av">MR</div>
+                <div class="cw-info"><div class="cw-name">Marie Rousseau</div><div class="cw-days">Dernière visite il y a 28 jours · Gold</div></div>
+                <span class="cw-risk">Risque élevé</span>
+              </div>
+              <div class="cw-client">
+                <div class="cw-av">TL</div>
+                <div class="cw-info"><div class="cw-name">Thomas Laurent</div><div class="cw-days">Dernière visite il y a 23 jours · Silver</div></div>
+                <span class="cw-risk med">À surveiller</span>
+              </div>
+              <div class="cw-client">
+                <div class="cw-av">AB</div>
+                <div class="cw-info"><div class="cw-name">Audrey Bernard</div><div class="cw-days">Dernière visite il y a 21 jours · Standard</div></div>
+                <span class="cw-risk med">À surveiller</span>
+              </div>
+            </div>
+            <a href="telecharger.html" class="cw-action">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l2 4.5H13l-4 3 1.5 4.5L7 10.5 3.5 13 5 8.5l-4-3h4L7 1z" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              Déclencher une offre flash — 1 tap
+            </a>
+          </div>
+          <div class="cw-footer">
+            <div class="cw-stat">Taux de reconquête moyen avec CoLinker : <strong>64%</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="sol-text fade-up">
+        <div class="sol-label">Anti-churn automatique</div>
+        <h3 class="sol-title">Rattrapez vos clients avant qu'ils ne partent</h3>
+        <p class="sol-desc">CoLinker détecte automatiquement chaque client qui n'est pas revenu depuis 21 jours et vous alerte pour déclencher une offre flash en 1 tap.</p>
+        <ul class="sol-points">
+          <li class="sol-point"><span class="sol-point-dot"></span>Seuil d'alerte configurable (21 jours par défaut)</li>
+          <li class="sol-point"><span class="sol-point-dot"></span>Offre flash personnalisée déclenchée en 1 tap</li>
+          <li class="sol-point"><span class="sol-point-dot"></span>Notification push directement dans l'app du client</li>
+          <li class="sol-point"><span class="sol-point-dot"></span>Taux de reconquête moyen constaté : 64%</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- USE CASES -->
+<section id="use-cases" aria-labelledby="uc-title">
+  <div class="container">
+    <header class="section-header">
+      <div class="section-label fade-up">Qui utilise CoLinker</div>
+      <h2 class="section-title fade-up d1" id="uc-title">Fait pour tous les commerces<br>de proximité</h2>
+      <p class="section-subtitle fade-up d2">Des cafés aux épiceries, en passant par les restaurants et les coiffeurs — CoLinker s'adapte à chaque type de commerce indépendant.</p>
+    </header>
+    <div class="uc-grid">
+      <article class="uc-card fade-up d1">
+        <span class="uc-emoji" aria-hidden="true">☕</span>
+        <h3 class="uc-type">Cafés et brasseries</h3>
+        <p class="uc-desc">Remplacez le tampon papier par un scan QR. Vos habitués du matin s'engagent plus, reviennent plus souvent et partagent leurs avis Google.</p>
+        <div class="uc-result"><div><div class="uc-result-label">Résultat moyen</div><div class="uc-result-val">+28% de fréquence de visite</div></div></div>
+      </article>
+      <article class="uc-card fade-up d2">
+        <span class="uc-emoji" aria-hidden="true">🥐</span>
+        <h3 class="uc-type">Boulangeries et pâtisseries</h3>
+        <p class="uc-desc">Fidélisez les familles du quartier avec un système de points sur chaque achat. Les offres flash du samedi matin remplissent votre boutique.</p>
+        <div class="uc-result"><div><div class="uc-result-label">Résultat moyen</div><div class="uc-result-val">+19% de panier moyen</div></div></div>
+      </article>
+      <article class="uc-card fade-up d3">
+        <span class="uc-emoji" aria-hidden="true">🛒</span>
+        <h3 class="uc-type">Épiceries et supérettes</h3>
+        <p class="uc-desc">Construisez une base client locale solide. Le pass mensuel transforme un client régulier en abonné — revenus prévisibles et rétention assurée.</p>
+        <div class="uc-result"><div><div class="uc-result-label">Résultat moyen</div><div class="uc-result-val">+41% de rétention à 3 mois</div></div></div>
+      </article>
+      <article class="uc-card fade-up d1">
+        <span class="uc-emoji" aria-hidden="true">🍽️</span>
+        <h3 class="uc-type">Restaurants et traiteurs</h3>
+        <p class="uc-desc">Les offres flash de midi remplissent les tables creuses. L'instant gagnant après chaque repas crée une expérience mémorable et des avis 5 étoiles.</p>
+        <div class="uc-result"><div><div class="uc-result-label">Résultat moyen</div><div class="uc-result-val">+35% de taux de retour</div></div></div>
+      </article>
+      <article class="uc-card fade-up d2">
+        <span class="uc-emoji" aria-hidden="true">✂️</span>
+        <h3 class="uc-type">Coiffeurs et instituts</h3>
+        <p class="uc-desc">Le programme de fidélité et le pass mensuel créent un abonnement naturel. Vos clients deviennent des ambassadeurs qui ramènent leur entourage.</p>
+        <div class="uc-result"><div><div class="uc-result-label">Résultat moyen</div><div class="uc-result-val">+52% de clients récurrents</div></div></div>
+      </article>
+      <article class="uc-card fade-up d3">
+        <span class="uc-emoji" aria-hidden="true">🧘</span>
+        <h3 class="uc-type">Studios et cours collectifs</h3>
+        <p class="uc-desc">Le pass mensuel CoLinker complète parfaitement votre offre d'abonnement. Chaque présence est récompensée, la communauté se crée autour de votre espace.</p>
+        <div class="uc-result"><div><div class="uc-result-label">Résultat moyen</div><div class="uc-result-val">+67% d'assiduité</div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- MERCHANT TESTIMONIALS -->
+<section id="merchant-tc" aria-labelledby="mtc-title">
+  <div class="container">
+    <header class="section-header">
+      <div class="section-label fade-up">Ils nous font confiance</div>
+      <h2 class="section-title fade-up d1" id="mtc-title">Ce que disent les commerçants</h2>
+    </header>
+    <div class="mtc-grid">
+      <article class="mtc fade-up d1">
+        <div class="mtc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="mtc-quote">"En 3 semaines, j'ai vu revenir des clients que je pensais perdus. Le dashboard m'a tout changé — je sais enfin qui vient, quand relancer et ce qui marche."</p>
+        <div class="mtc-author"><div class="mtc-av">MT</div><div><div class="mtc-name">Marc T.</div><div class="mtc-role">Gérant de café · Paris 11e</div></div></div>
+      </article>
+      <article class="mtc fade-up d2">
+        <div class="mtc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="mtc-quote">"L'alerte churn c'est magique — j'envoie une offre flash et ils reviennent le jour même. J'ai récupéré 12 clients perdus en un mois avec zéro effort."</p>
+        <div class="mtc-author"><div class="mtc-av">SK</div><div><div class="mtc-name">Sarah K.</div><div class="mtc-role">Gérante épicerie bio · Lyon 3e</div></div></div>
+      </article>
+      <article class="mtc fade-up d3">
+        <div class="mtc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="mtc-quote">"J'avais peur que ce soit compliqué à mettre en place. 10 minutes chrono, premier scan dans la foulée. Mes clients adorent et mes avis Google explosent."</p>
+        <div class="mtc-author"><div class="mtc-av">PB</div><div><div class="mtc-name">Pierre B.</div><div class="mtc-role">Boulanger · Bordeaux</div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section style="background:var(--dark-bar);padding:96px 0;text-align:center;" aria-label="Appel à l'action commerçants">
+  <div class="container">
+    <div class="tag-pill fade-up" style="background:rgba(184,146,42,.15);border-color:rgba(184,146,42,.25);margin-bottom:28px;display:inline-flex;">
+      <span class="dot"></span>Gratuit jusqu'à 150 clients
+    </div>
+    <h2 style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(32px,5vw,56px);color:#fff;line-height:1.15;margin-bottom:18px;" class="fade-up d1">Prêt à reprendre<br>le contrôle ?</h2>
+    <p style="font-size:17px;font-weight:300;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 44px;" class="fade-up d2">Opérationnel en 10 minutes. Zéro formation. Zéro engagement. Et si vous avez une question, notre équipe répond en moins d'une heure.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;" class="fade-up d3">
+      <a href="telecharger.html" class="btn btn-gold" style="padding:15px 32px;font-size:16px;">
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M8.5 2v9M6 8.5l2.5 2.5 2.5-2.5M2.5 14h12" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Démarrer gratuitement
+      </a>
+      <a href="tarifs.html" class="btn btn-white-outline" style="padding:15px 32px;font-size:16px;">Voir les tarifs →</a>
+    </div>
+    <p style="margin-top:28px;font-size:12px;font-weight:300;color:rgba(255,255,255,.3);" class="fade-up d4">Sans carte de crédit · Annulation à tout moment · Support français 7j/7</p>
+  </div>
+</section>
+</main>
+
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="co">Co</span><span class="linker">Linker</span></div>
+        <p class="footer-tagline">Le lien qui fidélise.<br>Connecter commerçants et clients depuis 2024.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="TikTok"><svg viewBox="0 0 16 16" fill="rgba(26,26,26,0.55)"><path d="M11 1c0 2 1.6 3.3 3 3.4v2.2c-1.1 0-2.2-.4-3-1v4.9c0 2.5-2 4.5-4.5 4.5S2 13 2 10.5 4 6 6.5 6v2.2C5.1 8.2 4 9.2 4 10.5c0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5V1h2z"/></svg></a>
+          <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 16 16" fill="none"><rect x="1.5" y="1.5" width="13" height="13" rx="3.5" stroke="rgba(26,26,26,0.55)" stroke-width="1.3"/><circle cx="8" cy="8" r="3" stroke="rgba(26,26,26,0.55)" stroke-width="1.3"/><circle cx="11.5" cy="4.5" r=".9" fill="rgba(26,26,26,0.55)"/></svg></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 16 16" fill="none"><rect x="1.5" y="1.5" width="13" height="13" rx="3" stroke="rgba(26,26,26,0.55)" stroke-width="1.3"/><path d="M5 6.5v5M5 4.5v.3M8 11.5V9c0-1.4.8-2.5 2-2.5s2 1 2 2.5v2.5M8 6.5v5" stroke="rgba(26,26,26,0.55)" stroke-width="1.2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Produit</div>
+        <ul><li><a href="fonctionnalites.html">Fonctionnalités</a></li><li><a href="tarifs.html">Tarifs</a></li><li><a href="commercants.html">Pour les commerçants</a></li><li><a href="telecharger.html">Télécharger</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Ressources</div>
+        <ul><li><a href="#">Centre d'aide</a></li><li><a href="#">Guide de démarrage</a></li><li><a href="#">Blog</a></li><li><a href="#">Presse</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Légal</div>
+        <ul><li><a href="#">CGU</a></li><li><a href="#">Confidentialité</a></li><li><a href="#">Mentions légales</a></li><li><a href="#">Supprimer mon compte</a></li><li><a href="#">Contact</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 CoLinker. Fait avec <span class="heart">♥</span> en France.</span>
+      <div class="footer-badges">
+        <span class="footer-badge"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1l1.5 3.5H11l-2.8 2 1 3.5L6 8 2.8 10l1-3.5L1 4.5h3.5L6 1z" stroke="rgba(26,26,26,0.5)" stroke-width="1" stroke-linejoin="round"/></svg>4,9 App Store</span>
+        <span class="footer-badge"><svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="rgba(26,26,26,0.5)" stroke-width="1"/><path d="M6 3.5v3l1.5 1" stroke="rgba(26,26,26,0.5)" stroke-width="1" stroke-linecap="round"/></svg>RGPD conforme</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
